@@ -1,1 +1,97 @@
-#add all the inputs , short of numbers here
+learning_rate : 0.001
+batch_size : 512
+num_epochs : 50
+nsamples : 200000
+act_hidden_layer : elu
+act_output_layer : softmax
+verbose : 1
+patience : 10
+is_training : true
+is_prediction : true
+
+train_features: [
+  T_qglq1, T_qglq2, T_ptq1, T_ptq2, T_phiq1, T_phiq2, T_dRqq, T_etaq1, T_etaq2,
+  T_NJ_20, T_alphaqq, T_mqq, T_dETAqq, T_dPHIqq, T_btgb1, T_btgb2, T_HTT_rest_20,
+  T_enq1, T_enq2, T_zep, T_phiA_bb_qq, T_dR_leadqH, T_norm_pt, T_dR_subleadqH,
+  T_pzAll, era, T_minR
+]
+
+weight_features:
+  - T_weight
+  - T_HLTweight
+  - T_PUweight
+  - T_btag_weight_central
+  - LUMI
+
+
+train_files_labels:
+  folder_path : /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/
+  file_names_labels:
+    - file_name: tree_JetMET_2022_5perc.root
+      label: 0
+    - file_name: tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022.root
+      label: 1
+    - file_name: tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022.root
+      label: 2
+    - file_name: tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022.root
+      label: 3
+    - file_name: tree_Zto2Q-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022.root
+      label: 4
+
+prediction_files:
+  folder_path : /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/
+  file_names:
+    - tree_JetMET_2022_5perc.root
+    - tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022.root
+    - tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022.root
+    - tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022.root
+    - tree_Zto2Q-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022.root
+    - tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022.root
+    - tree_JetMET_2022.root
+  
+output_plot_models:
+  folder_path : /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/
+  file_names:
+    roc_plot : roc_mclass_dnn.png
+    mbb_distr_with_and_without_cut : mbb_distr_with_and_without_cut_mclass_dnn.png
+    dnn_score_distr : dnn_score_distr_mclass_dnn.png
+    odd_model : odd_mclass_dnn.keras
+    even_model : even_mclass_dnn.keras
+
+variable_distribution_files:
+  folder_path : /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/
+  file_names_legend_colors:
+    - file_name : tree_JetMET_2022_5perc.root
+      legend : JetMET 2022 5%
+      color : blue
+    - file_name : tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022.root
+      legend : VBFHto2B M-125
+      color : red
+    - file_name : tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022.root
+      legend : GluGluHto2B M-125
+      color : green
+    - file_name : tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022.root
+      legend : TTto4Q
+      color : orange
+    - file_name : tree_Zto2Q-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022.root
+      legend : Zto2Q-4Jets HT
+      color : purple
+    - file_name : tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022.root
+      legend : QCD-4Jets HT
+      color : cyan
+
+roc_curve_files:
+  folder_path : /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/
+  file_names_labels:
+    - file_name : tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022.root
+      label : 1
+    - file_name : tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022.root
+      label : 0
+
+mbb_distribution_files_dnn_cuts:
+  file_path : /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022.root
+  dnn_cuts:
+    - dnn_cut : 0
+      legend : DNN Cut > 0
+    - dnn_cut : 0.95
+      legend : DNN Cut > 0.95
