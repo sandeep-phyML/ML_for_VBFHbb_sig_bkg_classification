@@ -1,17 +1,19 @@
 learning_rate : 0.001
 batch_size : 512
 num_epochs : 50
-nsamples : 200000
+nsamples : 20000
 act_hidden_layer : elu
-act_output_layer : softmax
+act_output_layer_mclass : softmax
+act_output_layer_binary : sigmoid
 verbose : 1
 patience : 10
 is_training : true
 is_prediction : true
-
+is_resampling : true
+mass_norm  : true 
 train_features: [
-  T_qglq1, T_qglq2, T_ptq1, T_ptq2, T_phiq1, T_phiq2, T_dRqq, T_etaq1, T_etaq2,
-  T_NJ_20, T_alphaqq, T_mqq, T_dETAqq, T_dPHIqq, T_btgb1, T_btgb2, T_HTT_rest_20,
+  T_qglq1, T_qglq2, T_ptq1, T_ptq2, T_phiq1, T_phiq2,  T_etaq1, T_etaq2,
+  T_NJ_30, T_alphaqq, T_mqq, T_dETAqq, T_dPHIqq, T_btgb1, T_btgb2, T_HTT_rest_30,
   T_enq1, T_enq2, T_zep, T_phiA_bb_qq, T_dR_leadqH, T_norm_pt, T_dR_subleadqH,
   T_pzAll, era, T_minR
 ]
@@ -22,7 +24,6 @@ weight_features:
   - T_PUweight
   - T_btag_weight_central
   - LUMI
-
 
 train_files_labels:
   folder_path : /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/
@@ -95,3 +96,7 @@ mbb_distribution_files_dnn_cuts:
       legend : DNN Cut > 0
     - dnn_cut : 0.95
       legend : DNN Cut > 0.95
+
+output_log :
+  folder_path : /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/
+  file_name : log_history.txt
