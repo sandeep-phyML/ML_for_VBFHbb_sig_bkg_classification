@@ -1,18 +1,17 @@
 #this is the main code script
 import os
-from utils import Plot , PrepareDataset , DNNModel , DNNModelTraining
+from utils import Plot , PrepareDataset , DNNModel , DNNModelTraining , BasicMethods
 import yaml
 
 import keras
 import tensorflow as tf
 import math
 # read the config file
+basic_tool = BasicMethods()
 config_file_name = "input_config.yml"
-with open(config_file_name, 'r') as file:
-    config = yaml.safe_load(file)
+config = basic_tool.read_config_file(config_file_name)
 log_path = os.path.join(config['output_log']['folder_path'],config['output_log']['file_name'])
-with open(log_path, 'w') as log_file:
-    log_file.write(f"Log file created at: {log_path}\n")
+basic_tool.create_log_folder(log_path)
 # get variables for the DNN model 
 input_shape = len(config['train_features'])
 train_files = config['train_files_labels']['file_names_labels']

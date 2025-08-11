@@ -21,6 +21,7 @@ from tensorflow.keras.models import clone_model
 import ROOT
 import array
 from tensorflow.keras.layers import Layer
+import yaml
 def save_output(out_data , ofile_path: str = "model_summary.txt"):
     with open(ofile_path, "a") as f:
         f.write(out_data + "\n")
@@ -401,7 +402,17 @@ class GradientReversalLayer(Layer):
         config.update({"lambd": self.lambd})
         return config
 
-
+class BasicMethods():
+    def __init__(self, ):
+        pass
+    def read_config_file(self, file_name ) -> Dict[str, any]:
+        with open(file_name, 'r') as file:
+            config = yaml.safe_load(file)
+        return config.copy()
+    def create_log_folder(self, log_path: str) -> None:
+        with open(log_path, 'w') as f:
+            f.write("Log file created.\n")
+        return True
 # ---------- 2. Classifier Network ----------
 def build_classifier(input_shape, activation='sigmoid', nclass=1):
     inputs = keras.Input(shape=(input_shape,))
