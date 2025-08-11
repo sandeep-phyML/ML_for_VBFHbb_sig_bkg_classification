@@ -16,6 +16,7 @@ import seaborn as sns
 from sklearn.datasets import load_iris
 from sklearn.feature_selection import SelectKBest, SelectPercentile, RFE, SelectFromModel
 from tensorflow.keras import layers
+from tensorflow.keras.models import clone_model
 #import subprocess  , use this if you want to run a script from command line
 import ROOT
 import array
@@ -321,13 +322,19 @@ class Plot():
 
 
 class DNNModel():
-    def __init__(self, input_shape: int, activation: str = 'sigmoid', nclass: int = 1):
+    def __init__(self, input_shape: int,learning_rate: float,loss_function: str, activation: str = 'sigmoid', nclass: int = 1):
         self.input_shape = input_shape
+        self.learning_rate = learning_rate
+        self.loss_function = loss_function
         self.activation = activation
         self.nclass = nclass
-        self.classifier = self.build_classifier()
-        # self.adversary = self.build_adversary()
-        # self.model = self.build_adversarial_model()
+        self.base_classifier = self.build_classifier()
+        self.odd_classifier = clone_model(self.base_classifier)
+        self.even_classifier = clone_model(self.base_classifier)
+        self.odd_classifier.set_weights(self.base_classifier.get_weights())
+        self.even_classifier.set_weights(self.base_classifier.get_weights())
+        self.optimizer_odd = keras.optimizers.AdamW(learning_rate=learning_rate)
+        self.optimizer_even = keras.optimizers.AdamW(learning_rate=learning_rate)
     def build_classifier(self):
         inputs = keras.Input(shape=(self.input_shape,))
         x = layers.BatchNormalization()(inputs)
@@ -345,7 +352,37 @@ class DNNModel():
         x = layers.Dropout(0.3)(x)
         output = layers.Dense(self.nclass, activation=self.activation)(x)
         return keras.Model(inputs, output, name="classifier")
-    
+    def compile_mclass_model(self, odd_model, even_model ):
+        odd_model.compile(optimizer= self.optimizer_odd,loss=self.loss_function,
+                    metrics=[
+                        'accuracy'
+                    ])
+        even_model.compile(optimizer = self.optimizer_even,loss=self.loss_function,
+                    metrics=[
+                        'accuracy'
+                    ])
+        return True 
+    def is_compiled(self, model):
+        return model.optimizer is not None
+
+
+class DNNModelTraining():
+    def __init__(self,learning_rate: float,loss_function: str ):
+        self.optimizer_odd = keras.optimizers.AdamW(learning_rate=learning_rate)
+        self.optimizer_even = keras.optimizers.AdamW(learning_rate=learning_rate)
+        self.loss_function = loss_function
+    def compile_mclass_model(self, odd_model, even_model ):
+        odd_model.compile(optimizer= self.optimizer_odd,loss=self.loss_function,
+                    metrics=[
+                        'accuracy'
+                    ])
+        even_model.compile(optimizer = self.optimizer_even,loss=self.loss_function,
+                    metrics=[
+                        'accuracy'
+                    ])
+        return True 
+
+
 class GradientReversalLayer(Layer):
     def __init__(self, lambd=1.0, **kwargs):
         super().__init__(**kwargs)
