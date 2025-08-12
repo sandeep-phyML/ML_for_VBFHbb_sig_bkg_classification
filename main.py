@@ -12,68 +12,30 @@ config_file_name = "input_config.yml"
 config = basic_tool.read_config_file(config_file_name)
 log_path = os.path.join(config['output_log']['folder_path'],config['output_log']['file_name'])
 basic_tool.create_log_folder(log_path)
-# get variables for the DNN model 
-input_shape = len(config['train_features'])
-train_files = config['train_files_labels']['file_names_labels']
-output_shape = 1
-activation = config['act_output_layer_binary']
-loss_function = config['loss_function_binary']
-if len(train_files) > 2:
-    output_shape = len(train_files)
-    activation = config["act_output_layer_mclass"]
-    loss_function = config['loss_function_mclass']
 
-
-model_ = DNNModel(input_shape=input_shape, nclass=output_shape, activation=activation,learning_rate=config['learning_rate'],loss_function = loss_function )
-odd_model_classifier , even_model_classifier = model_.odd_classifier , model_.even_classifier
-model_.compile_mclass_model(odd_model_classifier, even_model_classifier)
-
-
-# dnn_training = DNNModelTraining(learning_rate= config['learning_rate'],loss_function = loss_function )
-# dnn_training.compile_mclass_model(odd_model_classifier, even_model_classifier)
-
-
-print("odd_model_classifier compiled? :", model_.is_compiled(odd_model_classifier))
-print("even_model_classifier compiled? :", model_.is_compiled(even_model_classifier))
-
-# odd_model_classifier.compile(
-#     optimizer=optimizer_odd,
-#     loss=loss_function,
-#     metrics=[
-#         'accuracy'
-#     ]
-# )
-'''
-
-dnn_model = Dnn(shape ,mclass_activation , 5 )
-model = dnn_model.model4
-model.compile(
-    optimizer=optimizer,
-    loss='SparseCategoricalCrossentropy',  # or keras.losses.BinaryCrossentropy()
-    metrics=[
-        'accuracy'
-    ]
-)
-
-'''
-# even_model_classifier.compile(
-#     optimizer=optimizer_even,
-#     loss=loss_function,
-#     metrics=[
-#         'accuracy'
-#     ]
-# )
-
-odd_model_classifier.summary()  
-even_model_classifier.summary()
-'''
-# prepare the dataset for training get_np_feaweilabel_odd_even_train(self,folder_path:str, file_label_list: List[Dict[str, int]])
+# prepare the dataset for training
 dataset_ = PrepareDataset( train_feature = config['train_features'] , weight_feature = config["weight_features"],output_log_path = log_path , nsample =config["nsamples"], is_resampling=config['is_resampling'],mass_norm = config['mass_norm'])
-
 train_odd, train_even , weight_odd , weight_even , label_odd , label_even , mass_odd , mass_even = dataset_.get_np_feaweilabel_odd_even_train(folder_path= config["train_files_labels"]["folder_path"], file_label_list= config["train_files_labels"]["file_names_labels"])
 print(train_odd.shape, label_odd.shape, weight_odd.shape)
 print(train_even.shape, label_even.shape, weight_even.shape)
 
+# Load and configure the training feature data , labels and weights the DNN models
+model_ = DNNModel(config,log_path)
+model_.features_odd_data = train_odd
+model_.features_even_data = train_even
+model_.labels_odd_data = label_odd
+model_.labels_even_data = label_even
+model_.weights_odd_data = weight_odd
+model_.weights_even_data = weight_even
+
+# compile , train and save the model weights
+model_.compile_mclass_model()
+model_.train_mclass_model()
+model_.save_model_weights()
+
+# prepare the dataset for training get_np_feaweilabel_odd_even_train(self,folder_path:str, file_label_list: List[Dict[str, int]])
+
+'''
 # Train each model
 odd_dataset = tf.data.Dataset.from_tensor_slices((
             train_odd,

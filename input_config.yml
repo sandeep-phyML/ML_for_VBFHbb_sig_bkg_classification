@@ -5,6 +5,8 @@ nsamples : 20000
 act_hidden_layer : elu
 act_output_layer_mclass : softmax
 act_output_layer_binary : sigmoid
+loss_function_mclass : SparseCategoricalCrossentropy
+loss_function_binary : binary_crossentropy
 verbose : 1
 patience : 10
 is_training : true
@@ -100,3 +102,14 @@ mbb_distribution_files_dnn_cuts:
 output_log :
   folder_path : /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/
   file_name : log_history.txt
+
+
+
+
+verbose : 1
+patience : 5
+restore_best_weights : True
+start_from_epoch : 10
+monitor : 'val_accuracy'
+decay_rate : 0.05
+start_decay : 10
