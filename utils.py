@@ -27,19 +27,22 @@ def save_output(out_data , ofile_path: str = "model_summary.txt"):
         f.write(out_data + "\n")
 
 class PrepareDataset():
-    def __init__(self , train_feature: List[str] , weight_feature: List[str],output_log_path , nsample , is_resampling: bool,mass_norm : bool = True):
-        self.train_feature = train_feature
-        self.weight_features = weight_feature
-        self.nsample = nsample
+    def __init__(self , config: Dict[str, any], output_log_path: str):
+        self.config = config
+        self.train_feature = self.config['train_features']
+        self.weight_features = self.config["weight_features"]
+        self.nsample = self.config["nsamples"]
         self.output_file_path = output_log_path
         self.total_weight_branch = "weight_"
         self.norm_branch = "norm_weight"
         self.label_branch_name = "label"
-        self.event_branch = "T_event"
-        self.tree_name = "tree"
-        self.is_resample_all = is_resampling
-        self.normalise_mass = mass_norm 
-        
+        self.event_branch = self.config['event_branch']
+        self.tree_name = self.config['tree_name']
+        self.is_resample_all = self.config['is_resampling']
+        self.normalise_mass = self.config['mass_norm']
+        self.train_folder_path = self.config["train_files_labels"]["folder_path"]
+        self.file_label_list = self.config["train_files_labels"]["file_names_labels"]
+        self.pred_paths = [os.path.join(self.config["prediction_files"]["folder_path"], file_name) for file_name in self.config["prediction_files"]["file_names"]]
     def convert_tree_to_pd(self, input_file: str) -> pd.DataFrame:
         file_data = uproot.open(f"{input_file}:{self.tree_name}")
         pd_data = file_data.arrays(file_data.keys(), library="pd")
@@ -82,10 +85,10 @@ class PrepareDataset():
         save_output("Replaced NaN and Inf values with zero",ofile_path = self.output_file_path)
         return pd_data
         
-    def get_np_feaweilabel_odd_even_train(self,folder_path:str, file_label_list: List[Dict[str, int]]) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
+    def get_np_feaweilabel_odd_even_train(self) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
         all_data = []
-        for item in file_label_list:
-            file_path = os.path.join(folder_path, item["file_name"])
+        for item in self.file_label_list:
+            file_path = os.path.join(self.train_folder_path, item["file_name"])
             label_value = item["label"]
             pd_data_ = self.convert_tree_to_pd(file_path)
             if self.is_resample_all:
@@ -122,10 +125,10 @@ class PrepareDataset():
         save_output(f"Processed data - Odd features shape: {feature_odd.shape}, Even features shape: {feature_even.shape}", ofile_path=self.output_file_path)
         return feature_odd, feature_even , weight_odd , weight_even , label_odd , label_even , mass_odd , mass_even
             
-    def get_even_odd_predict_feature_df(self, file_list: List[str]) -> Dict[str, Dict[str, Dict[str, np.ndarray]]]:
+    def prepare_pred_data(self) -> Dict[str, Dict[str, Dict[str, np.ndarray]]]:
         all_data = {}
-        save_output(f"Processing files for predictions : {file_list}", ofile_path=self.output_file_path)
-        for file in file_list:
+        save_output(f"Processing files for predictions : {self.pred_paths}", ofile_path=self.output_file_path)
+        for file in self.pred_paths:
             all_data[file] = {"odd_data": {}, "even_data": {}}
             pd_data_ = self.convert_tree_to_pd(file)
             odd_data_ = pd_data_[pd_data_[self.event_branch] % 2 == 1].reset_index(drop=True)
@@ -323,19 +326,33 @@ class Plot():
 
 
 class DNNModel():
-    def __init__(self, input_shape: int,learning_rate: float,loss_function: str, activation: str = 'sigmoid', nclass: int = 1):
-        self.input_shape = input_shape
-        self.learning_rate = learning_rate
-        self.loss_function = loss_function
-        self.activation = activation
-        self.nclass = nclass
+    def __init__(self, config: Dict[str, any],log_path: str):
+        self.config = config
+        self.log_path = log_path
+        self.input_shape = None
+        self.learning_rate = None
+        self.loss_function = None
+        self.activation =  None
+        self.nclass = None
+        self.features_odd_data = None
+        self.features_even_data = None
+        self.labels_odd_data = None
+        self.labels_even_data = None
+        self.weights_odd_data = None
+        self.weights_even_data = None
+        self.train_odd_dataset = None
+        self.train_even_dataset = None
+        self.odd_model_save_path = os.path.join(self.config['output_plot_models']["folder_path"], self.config['output_plot_models']["file_names"]["odd_model"])
+        self.even_model_save_path = os.path.join(self.config['output_plot_models']["folder_path"], self.config['output_plot_models']["file_names"]["even_model"])
+        self.get_inshape_nclass_activ_loss()
         self.base_classifier = self.build_classifier()
         self.odd_classifier = clone_model(self.base_classifier)
         self.even_classifier = clone_model(self.base_classifier)
         self.odd_classifier.set_weights(self.base_classifier.get_weights())
         self.even_classifier.set_weights(self.base_classifier.get_weights())
-        self.optimizer_odd = keras.optimizers.AdamW(learning_rate=learning_rate)
-        self.optimizer_even = keras.optimizers.AdamW(learning_rate=learning_rate)
+        self.optimizer_odd = keras.optimizers.AdamW(learning_rate=self.learning_rate)
+        self.optimizer_even = keras.optimizers.AdamW(learning_rate=self.learning_rate)
+        self.pred_data_dict = None
     def build_classifier(self):
         inputs = keras.Input(shape=(self.input_shape,))
         x = layers.BatchNormalization()(inputs)
@@ -353,18 +370,132 @@ class DNNModel():
         x = layers.Dropout(0.3)(x)
         output = layers.Dense(self.nclass, activation=self.activation)(x)
         return keras.Model(inputs, output, name="classifier")
-    def compile_mclass_model(self, odd_model, even_model ):
-        odd_model.compile(optimizer= self.optimizer_odd,loss=self.loss_function,
+    def compile_mclass_model(self):
+        self.odd_classifier.compile(optimizer= self.optimizer_odd,loss=self.loss_function,
                     metrics=[
                         'accuracy'
                     ])
-        even_model.compile(optimizer = self.optimizer_even,loss=self.loss_function,
+        self.even_classifier.compile(optimizer = self.optimizer_even,loss=self.loss_function,
                     metrics=[
                         'accuracy'
                     ])
+        print("odd_model_classifier compiled? :", self.is_compiled(self.odd_classifier))
+        print("even_model_classifier compiled? :", self.is_compiled(self.even_classifier))
+        self.odd_classifier.summary()  
+        self.even_classifier.summary()
+        save_output("Compiled odd and even classifiers", ofile_path=self.log_path )
         return True 
     def is_compiled(self, model):
         return model.optimizer is not None
+    def prepare_tf_dataset(self):
+        odd_dataset = tf.data.Dataset.from_tensor_slices((
+            self.features_odd_data,
+            self.labels_odd_data,
+            self.weights_odd_data
+        )).shuffle(1000).batch(self.config['batch_size'])
+
+        even_dataset = tf.data.Dataset.from_tensor_slices((
+            self.features_even_data,
+            self.labels_even_data,
+            self.weights_even_data
+        )).batch(self.config['batch_size'])
+
+        odd_dataset = odd_dataset.map(lambda x, y, w: ((x), y, w))
+        even_dataset = even_dataset.map(lambda x, y, w: ((x), y, w))
+        self.train_odd_dataset = odd_dataset
+        self.train_even_dataset = even_dataset
+        save_output("Prepared TensorFlow datasets for training", ofile_path=self.log_path )
+        return True
+
+    def train_mclass_model(self):
+        self.prepare_tf_dataset()
+        lr_scheduler = keras.callbacks.LearningRateScheduler(self.scheduler)
+        early_stopping = self.early_stopping()
+        history_odd = self.odd_classifier.fit(
+            self.train_odd_dataset,
+            validation_data=self.train_even_dataset,
+            epochs=self.config['num_epochs'],
+            callbacks=[lr_scheduler, early_stopping]
+        )
+
+        history_even = self.even_classifier.fit(
+            self.train_even_dataset,
+            validation_data=self.train_odd_dataset,
+            epochs=self.config['num_epochs'],
+            callbacks=[lr_scheduler, early_stopping]
+        )
+        save_output("Training completed for both odd and even classifiers", ofile_path=self.log_path )
+    def predict_mclass_model(self):
+        even_model = None
+        odd_model = None
+        try:
+            even_model = keras.models.load_model(self.even_model_save_path)
+            odd_model = keras.models.load_model(self.odd_model_save_path)
+            save_output(f"Loaded odd classifier model from {self.odd_model_save_path}", ofile_path=self.log_path )
+            save_output(f"Loaded even classifier model from {self.even_model_save_path}", ofile_path=self.log_path )
+        except Exception as e:
+            save_output(f"Error loading models: {e}", ofile_path=self.log_path )
+            return False
+        if even_model  and odd_model :
+            for file_path in self.pred_data_dict.keys():
+                odd_data = self.pred_data_dict[file_path]['odd_data']['full_data_']
+                even_data = self.pred_data_dict[file_path]['even_data']['full_data_']
+                odd_feature_data = self.pred_data_dict[file_path]['odd_data']['features']
+                even_feature_data = self.pred_data_dict[file_path]['even_data']['features']
+                odd_scores = even_model.predict(odd_feature_data, batch_size=256).squeeze()
+                even_scores = odd_model.predict(even_feature_data, batch_size=256).squeeze()
+                for branch_index_info in self.config['train_files_labels']['file_names_labels']:
+                    index = branch_index_info["label"]
+                    branch_name = branch_index_info['branch_name']
+                    odd_data[branch_name] = odd_scores[:,index]
+                    even_data[branch_name] = even_scores[:,index]
+                combined_data = pd.concat([odd_data, even_data], ignore_index=True)
+                with uproot.recreate(file_path) as ofile:
+                    ofile["tree"] = combined_data
+                save_output(f"Saved predictions to {file_path}", ofile_path=self.log_path )
+        
+    def save_model_weights(self):
+        odd_model_path = self.odd_model_save_path 
+        even_model_path = self.even_model_save_path 
+        self.odd_classifier.save(odd_model_path)
+        self.even_classifier.save(even_model_path)
+        save_output(f"Saved odd classifier model to {odd_model_path}", ofile_path=self.log_path )
+        save_output(f"Saved even classifier model to {even_model_path}", ofile_path=self.log_path )
+    
+    def early_stopping(self) -> keras.callbacks.EarlyStopping:
+        return keras.callbacks.EarlyStopping(
+            monitor=self.config["monitor"],
+            verbose=self.config['verbose'],
+            patience=self.config['patience'],
+            restore_best_weights=self.config['restore_best_weights'],
+            start_from_epoch=self.config['start_from_epoch']
+        )
+    def scheduler(self, epoch, lr, decay_rate=None, start_decay=None):
+        if decay_rate is None:
+            decay_rate = self.config["learning_rate"]  # ✅ now self is defined
+        if start_decay is None:
+            start_decay = self.config["start_decay"]
+        if epoch < start_decay:
+            return lr
+        else:
+            return lr * math.exp(-decay_rate * (epoch - start_decay))
+    def get_inshape_nclass_activ_loss(self):
+        input_shape = len(self.config['train_features'])
+        if len(self.config['train_files_labels']['file_names_labels']) > 2:
+            nclass = len(self.config['train_files_labels']['file_names_labels'])
+            activation = self.config["act_output_layer_mclass"]
+            loss_function = self.config['loss_function_mclass']
+        else:
+            nclass = 1
+            activation = self.config['act_output_layer_binary']
+            loss_function = self.config['loss_function_binary']
+        self.input_shape = input_shape
+        self.learning_rate = self.config['learning_rate']
+        self.loss_function = loss_function
+        self.activation =  activation
+        self.nclass = nclass
+        save_output(f"Input shape: {input_shape}, Number of classes: {nclass}, Activation: {activation}, Loss function: {loss_function}", ofile_path=self.log_path )
+        return True
 
 
 class DNNModelTraining():
@@ -413,6 +544,17 @@ class BasicMethods():
         with open(log_path, 'w') as f:
             f.write("Log file created.\n")
         return True
+    def get_inshape_nclass_activ_loss(self, config: Dict[str, any]) -> Tuple[int, int , str, str]:
+        input_shape = len(config['train_features'])
+        if len(config['train_files_labels']['file_names_labels']) > 2:
+            nclass = len(config['train_files_labels']['file_names_labels'])
+            activation = config["act_output_layer_mclass"]
+            loss_function = config['loss_function_mclass']
+        else:
+            nclass = 1
+            activation = config['act_output_layer_binary']
+            loss_function = config['loss_function_binary']
+        return input_shape,nclass, activation, loss_function
 # ---------- 2. Classifier Network ----------
 def build_classifier(input_shape, activation='sigmoid', nclass=1):
     inputs = keras.Input(shape=(input_shape,))
