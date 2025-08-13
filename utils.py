@@ -498,21 +498,7 @@ class DNNModel():
         return True
 
 
-class DNNModelTraining():
-    def __init__(self,learning_rate: float,loss_function: str ):
-        self.optimizer_odd = keras.optimizers.AdamW(learning_rate=learning_rate)
-        self.optimizer_even = keras.optimizers.AdamW(learning_rate=learning_rate)
-        self.loss_function = loss_function
-    def compile_mclass_model(self, odd_model, even_model ):
-        odd_model.compile(optimizer= self.optimizer_odd,loss=self.loss_function,
-                    metrics=[
-                        'accuracy'
-                    ])
-        even_model.compile(optimizer = self.optimizer_even,loss=self.loss_function,
-                    metrics=[
-                        'accuracy'
-                    ])
-        return True 
+
 
 
 class GradientReversalLayer(Layer):
