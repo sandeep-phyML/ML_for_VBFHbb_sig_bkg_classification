@@ -1,10 +1,12 @@
 #import ncecessary libraries
 import os
-from utils import Plot , PrepareDataset , DNNModel , DNNModelTraining , BasicMethods
+from utils import Plot , PrepareDataset , DNNModel , BasicMethods
 import argparse
 
 # get arguments from command line
 parser = argparse.ArgumentParser(description="Model pipeline options")
+parser.add_argument('--biclass', action='store_true', help="biclass / multiclass ")
+parser.add_argument('--bdt', action='store_true', help="bdt or DNN ")
 parser.add_argument('--train', action='store_true', help="Run training")
 parser.add_argument('--predict', action='store_true', help="Run prediction")
 parser.add_argument('--results', action='store_true', help="Show/save results")
@@ -18,13 +20,13 @@ log_path = os.path.join(config['output_log']['folder_path'],config['output_log']
 basic_tool.create_log_folder(log_path)
 
 # prepare the dataset for training
-dataset_ = PrepareDataset(  config = config ,output_log_path = log_path)
+dataset_ = PrepareDataset(  config = config ,output_log_path = log_path , is_biclass = args.biclass)
 train_odd, train_even , weight_odd , weight_even , label_odd , label_even , mass_odd , mass_even = dataset_.get_np_feaweilabel_odd_even_train()
 print(train_odd.shape, label_odd.shape, weight_odd.shape)
 print(train_even.shape, label_even.shape, weight_even.shape)
 
 # Load and configure the training feature data , labels and weights the DNN models
-model_ = DNNModel(config,log_path)
+model_ = DNNModel(config,log_path, is_biclass=args.biclass, is_bdt=args.bdt)
 model_.features_odd_data = train_odd
 model_.features_even_data = train_even
 model_.labels_odd_data = label_odd
@@ -34,14 +36,21 @@ model_.weights_even_data = weight_even
 
 # compile , train and save the model weights
 if args.train:
-    model_.compile_mclass_model()
-    model_.train_mclass_model()
+    model_.compile_dnn_model()
+    model_.train_dnn_model()
     model_.save_model_weights()
-
+'''
 # predict DNN score model 
 if args.predict:
     model_.pred_data_dict = dataset_.prepare_pred_data()
     model_.predict_mclass_model()
 
-
+# show results and save plots
+if args.results:
+    plot_ = Plot(config, log_path)
+    plot_.plot_mclass_results(model_.pred_data_dict, model_.model_weights_path)
+    plot_.save_mclass_results(model_.pred_data_dict, model_.model_weights_path)
+    plot_.plot_mclass_loss(model_.loss_history, model_.model_weights_path)
+    plot_.save_mclass_loss(model_.loss_history, model_.model_weights_path)
+'''
 

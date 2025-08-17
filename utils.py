@@ -27,7 +27,7 @@ def save_output(out_data , ofile_path: str = "model_summary.txt"):
         f.write(out_data + "\n")
 
 class PrepareDataset():
-    def __init__(self , config: Dict[str, any], output_log_path: str):
+    def __init__(self , config: Dict[str, any], output_log_path: str, is_biclass: bool ):
         self.config = config
         self.train_feature = self.config['train_features']
         self.weight_features = self.config["weight_features"]
@@ -40,8 +40,12 @@ class PrepareDataset():
         self.tree_name = self.config['tree_name']
         self.is_resample_all = self.config['is_resampling']
         self.normalise_mass = self.config['mass_norm']
-        self.train_folder_path = self.config["train_files_labels"]["folder_path"]
-        self.file_label_list = self.config["train_files_labels"]["file_names_labels"]
+        if is_biclass:
+            self.train_folder_path = self.config["train_biclass_files_labels"]["folder_path"]
+            self.file_label_list = self.config["train_biclass_files_labels"]["file_names_labels"]
+        else:
+            self.train_folder_path = self.config["train_mclass_files_labels"]["folder_path"]
+            self.file_label_list = self.config["train_mclass_files_labels"]["file_names_labels"]
         self.pred_paths = [os.path.join(self.config["prediction_files"]["folder_path"], file_name) for file_name in self.config["prediction_files"]["file_names"]]
     def convert_tree_to_pd(self, input_file: str) -> pd.DataFrame:
         file_data = uproot.open(f"{input_file}:{self.tree_name}")
@@ -150,23 +154,13 @@ class PrepareDataset():
 
 
 class Plot():
-    def __init__(self , history_out_path: str ):
-        self.tree_name = "tree"
-        self.history_out_path = history_out_path
-    def helper(self):
-        print("\n=== Plot Class Methods ===")
-        print("1. plot_tprofile(file_path, save_path, is_mclass=True, is_data=False,")
-        print("                 mbb_range=(110.0, 140.0), vbfbclass='BiClassANN',")
-        print("                 vbf_dnn='VBF_DNN', qcd_dnn='QCD_DNN')")
-        print("   → Plots TProfile of Higgs reconstructed mass vs DNN score.")
-        
-        print("\n2. plot_var_distribution(branch_names, files_colour_legend_dict, folder_path, save_path,")
-        print("                         range_=(0, 1), nbin=25)")
-        print("   → Plots normalized variable distribution from ROOT trees.")
-        
-        print("\n3. plot_roc_curve(y_true, y_score, save_path, label='Model')")
-        print("   → Plots ROC curve with AUC score from given predictions.")
-        print("==========================\n")
+    def __init__(self , config ,log_path: str ):
+        self.config = config
+        self.tree_name = config["tree_name"]
+        self.history_out_path = log_path
+        self.train_features = config["train_features"]
+        self.is_mclass = config["is_mclass"]
+    
     def plot_tprofile(self,file_path ,save_path, is_mclass = True ,is_data = False,nbins = 50,mbb_range=(110.0, 140.0),vbfbclass="BiClassANN",vbf_dnn = "VBF_DNN",qcd_dnn = "QCD_DNN"):
         save_output(f"Plotting TProfile from file: {file_path}, is_mclass = {is_mclass} , vbfbclass={vbfbclass},vbf_dnn = {vbf_dnn},qcd_dnn = {qcd_dnn} ", ofile_path=self.history_out_path)
         ROOT.gStyle.SetPalette(112)
@@ -326,7 +320,8 @@ class Plot():
 
 
 class DNNModel():
-    def __init__(self, config: Dict[str, any],log_path: str):
+    def __init__(self, config: Dict[str, any],log_path: str,is_biclass:bool, is_bdt: bool = False):
+        self.is_biclass = is_biclass
         self.config = config
         self.log_path = log_path
         self.input_shape = None
@@ -342,8 +337,15 @@ class DNNModel():
         self.weights_even_data = None
         self.train_odd_dataset = None
         self.train_even_dataset = None
-        self.odd_model_save_path = os.path.join(self.config['output_plot_models']["folder_path"], self.config['output_plot_models']["file_names"]["odd_model"])
-        self.even_model_save_path = os.path.join(self.config['output_plot_models']["folder_path"], self.config['output_plot_models']["file_names"]["even_model"])
+        if self.is_biclass and is_bdt:
+            self.odd_model_save_path = os.path.join(self.config['output_plot_models']["folder_path"], self.config['output_plot_models']["biclass_bdt_file_names"]["odd_model"])
+            self.even_model_save_path = os.path.join(self.config['output_plot_models']["folder_path"], self.config['output_plot_models']["biclass_bdt_file_names"]["even_model"])
+        elif is_biclass and not is_bdt:
+            self.odd_model_save_path = os.path.join(self.config['output_plot_models']["folder_path"], self.config['output_plot_models']["biclass_dnn_file_names"]["odd_model"])
+            self.even_model_save_path = os.path.join(self.config['output_plot_models']["folder_path"], self.config['output_plot_models']["biclass_dnn_file_names"]["even_model"])
+        else:
+            self.odd_model_save_path = os.path.join(self.config['output_plot_models']["folder_path"], self.config['output_plot_models']["mclass_dnn_file_names"]["odd_model"])
+            self.even_model_save_path = os.path.join(self.config['output_plot_models']["folder_path"], self.config['output_plot_models']["mclass_dnn_file_names"]["even_model"])
         self.get_inshape_nclass_activ_loss()
         self.base_classifier = self.build_classifier()
         self.odd_classifier = clone_model(self.base_classifier)
@@ -370,7 +372,7 @@ class DNNModel():
         x = layers.Dropout(0.3)(x)
         output = layers.Dense(self.nclass, activation=self.activation)(x)
         return keras.Model(inputs, output, name="classifier")
-    def compile_mclass_model(self):
+    def compile_dnn_model(self):
         self.odd_classifier.compile(optimizer= self.optimizer_odd,loss=self.loss_function,
                     metrics=[
                         'accuracy'
@@ -407,7 +409,7 @@ class DNNModel():
         save_output("Prepared TensorFlow datasets for training", ofile_path=self.log_path )
         return True
 
-    def train_mclass_model(self):
+    def train_dnn_model(self):
         self.prepare_tf_dataset()
         lr_scheduler = keras.callbacks.LearningRateScheduler(self.scheduler)
         early_stopping = self.early_stopping()
@@ -417,13 +419,19 @@ class DNNModel():
             epochs=self.config['num_epochs'],
             callbacks=[lr_scheduler, early_stopping]
         )
-
+        
         history_even = self.even_classifier.fit(
             self.train_even_dataset,
             validation_data=self.train_odd_dataset,
             epochs=self.config['num_epochs'],
             callbacks=[lr_scheduler, early_stopping]
         )
+        if not self.is_biclass:
+            self.analyze_overfitting(history_odd, loss_threshold=self.config['accuracy_threshold'], acc_threshold=self.config['loss_threshold'] , is_even= False,is_biclass= False, is_bdt = False)
+            self.analyze_overfitting(history_even, loss_threshold=self.config['accuracy_threshold'], acc_threshold=self.config['loss_threshold'] , is_even= True,is_biclass= False, is_bdt = False)
+        else :
+            self.analyze_overfitting(history_odd, loss_threshold=self.config['accuracy_threshold'], acc_threshold=self.config['loss_threshold'] , is_even= False,is_biclass= True, is_bdt = False)
+            self.analyze_overfitting(history_even, loss_threshold=self.config['accuracy_threshold'], acc_threshold=self.config['loss_threshold'] , is_even= True,is_biclass= True, is_bdt = False)
         save_output("Training completed for both odd and even classifiers", ofile_path=self.log_path )
     def predict_mclass_model(self):
         even_model = None
@@ -479,16 +487,16 @@ class DNNModel():
             return lr
         else:
             return lr * math.exp(-decay_rate * (epoch - start_decay))
-    def get_inshape_nclass_activ_loss(self):
+    def get_inshape_nclass_activ_loss(self) -> bool:
         input_shape = len(self.config['train_features'])
-        if len(self.config['train_files_labels']['file_names_labels']) > 2:
-            nclass = len(self.config['train_files_labels']['file_names_labels'])
-            activation = self.config["act_output_layer_mclass"]
-            loss_function = self.config['loss_function_mclass']
-        else:
+        if  self.is_biclass:
             nclass = 1
-            activation = self.config['act_output_layer_binary']
+            activation = self.config["act_output_layer_binary"]
             loss_function = self.config['loss_function_binary']
+        else:
+            nclass = len(self.config['train_mclass_files_labels']['file_names_labels'])
+            activation = self.config['act_output_layer_mclass']
+            loss_function = self.config['loss_function_mclass']
         self.input_shape = input_shape
         self.learning_rate = self.config['learning_rate']
         self.loss_function = loss_function
@@ -496,6 +504,74 @@ class DNNModel():
         self.nclass = nclass
         save_output(f"Input shape: {input_shape}, Number of classes: {nclass}, Activation: {activation}, Loss function: {loss_function}", ofile_path=self.log_path )
         return True
+    def analyze_overfitting(self , history, loss_threshold=0.1, acc_threshold=0.1 , is_even:bool = True,is_biclass:bool = True, is_bdt:bool = False):
+        if is_biclass and is_bdt and is_even:
+            file_path = os.path.join(self.config['roc_curve_files']["folder_path"], self.config['roc_curve_files']["file_names_loss_acc_train_val"]["bdt_biclass_even_file_name"])
+        elif is_biclass and is_bdt and not is_even:
+            file_path = os.path.join(self.config['roc_curve_files']["folder_path"], self.config['roc_curve_files']["file_names_loss_acc_train_val"]["bdt_biclass_odd_file_name"])
+        elif not is_biclass and not is_bdt and  is_even:
+            file_path = os.path.join(self.config['roc_curve_files']["folder_path"], self.config['roc_curve_files']["file_names_loss_acc_train_val"]["dnn_mclass_even_file_name"])
+        elif not is_biclass and not is_bdt and not is_even:
+            file_path = os.path.join(self.config['roc_curve_files']["folder_path"], self.config['roc_curve_files']["file_names_loss_acc_train_val"]["dnn_mclass_odd_file_name"])
+        elif is_biclass and not is_bdt and is_even:
+            file_path = os.path.join(self.config['roc_curve_files']["folder_path"], self.config['roc_curve_files']["file_names_loss_acc_train_val"]["dnn_biclass_even_file_name"])
+        elif is_biclass and not is_bdt and not is_even:
+            file_path = os.path.join(self.config['roc_curve_files']["folder_path"], self.config['roc_curve_files']["file_names_loss_acc_train_val"]["dnn_biclass_odd_file_name"])
+        else:
+            raise ValueError("Invalid combination of is_biclass and is_bdt flags.")
+        history_dict = history.history
+        epochs = range(1, len(history_dict['loss']) + 1)
+        plt.figure(figsize=(12, 5))
+        plt.subplot(1, 2, 1)
+        plt.plot(epochs, history_dict['loss'], label='Training Loss')
+        plt.plot(epochs, history_dict['val_loss'], label='Validation Loss')
+        plt.title('Loss over Epochs')
+        plt.xlabel('Epochs')
+        plt.ylabel('Loss')
+        plt.legend()
+        acc_key = 'accuracy' if 'accuracy' in history_dict else 'acc'
+        val_acc_key = 'val_accuracy' if 'val_accuracy' in history_dict else 'val_acc'
+    
+        if acc_key in history_dict and val_acc_key in history_dict:
+            plt.subplot(1, 2, 2)
+            plt.plot(epochs, history_dict[acc_key], label='Training Accuracy')
+            plt.plot(epochs, history_dict[val_acc_key], label='Validation Accuracy')
+            plt.title('Accuracy over Epochs')
+            plt.xlabel('Epochs')
+            plt.ylabel('Accuracy')
+            plt.legend()
+    
+        plt.tight_layout()
+        plt.savefig(file_path)
+        # plt.show()
+    
+        # Check for overfitting
+        final_train_loss = history_dict['loss'][-1]
+        final_val_loss = history_dict['val_loss'][-1]
+        loss_gap = final_val_loss - final_train_loss
+    
+        print(f"Final Training Loss: {final_train_loss:.4f}")
+        print(f"Final Validation Loss: {final_val_loss:.4f}")
+        print(f"Loss Gap: {loss_gap:.4f}")
+    
+        if loss_gap > loss_threshold:
+            print("⚠️ Potential overfitting detected (validation loss is significantly higher).")
+        else:
+            print("✅ No significant overfitting based on loss.")
+    
+        if acc_key in history_dict and val_acc_key in history_dict:
+            final_train_acc = history_dict[acc_key][-1]
+            final_val_acc = history_dict[val_acc_key][-1]
+            acc_gap = final_train_acc - final_val_acc
+    
+            print(f"Final Training Accuracy: {final_train_acc:.4f}")
+            print(f"Final Validation Accuracy: {final_val_acc:.4f}")
+            print(f"Accuracy Gap: {acc_gap:.4f}")
+    
+            if acc_gap > acc_threshold:
+                print("⚠️ Potential overfitting detected (training accuracy much higher than validation).")
+            else:
+                print("✅ No significant overfitting based on accuracy.")
 
 
 
@@ -530,17 +606,7 @@ class BasicMethods():
         with open(log_path, 'w') as f:
             f.write("Log file created.\n")
         return True
-    def get_inshape_nclass_activ_loss(self, config: Dict[str, any]) -> Tuple[int, int , str, str]:
-        input_shape = len(config['train_features'])
-        if len(config['train_files_labels']['file_names_labels']) > 2:
-            nclass = len(config['train_files_labels']['file_names_labels'])
-            activation = config["act_output_layer_mclass"]
-            loss_function = config['loss_function_mclass']
-        else:
-            nclass = 1
-            activation = config['act_output_layer_binary']
-            loss_function = config['loss_function_binary']
-        return input_shape,nclass, activation, loss_function
+    
 # ---------- 2. Classifier Network ----------
 def build_classifier(input_shape, activation='sigmoid', nclass=1):
     inputs = keras.Input(shape=(input_shape,))
@@ -584,4 +650,6 @@ def build_adversarial_model(classifier, adversary, input_shape):
     adversary_output_named = layers.Lambda(lambda x: x, name="mass_output")(adversary_output)
 
     return keras.Model(inputs=inputs, outputs=[classifier_output_named, adversary_output_named], name="adversarial_model")
+
+
 
