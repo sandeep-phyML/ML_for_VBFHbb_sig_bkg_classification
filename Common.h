@@ -1,4 +1,5 @@
 // define all the variables files here 
+#pragma once
 #include <iostream>
 #include <vector>
 #include "TString.h"
