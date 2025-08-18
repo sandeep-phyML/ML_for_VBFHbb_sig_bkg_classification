@@ -9,64 +9,48 @@
 #include "TMVA/Reader.h"
 #include <iostream>
 #include <vector>
-
+#include "Common.h"
 using namespace TMVA;
 
-void TMVA_BDT() {
-    // --- Init TMVA
-    TMVA::Tools::Instance();
 
-    // --- Input signal and background
-    TFile *fsig = TFile::Open("tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022.root");
-    TFile *fbkg = TFile::Open("tree_JetMET_2022_5perc.root");
-TTree *tsig_raw = (TTree*)fsig->Get("tree");
-TTree *tbkg_raw = (TTree*)fbkg->Get("tree");
-
-// Clean: remove NaN/Inf in T_alphaqq
-TString cleanCut = "!isnan(T_alphaqq) && !isinf(T_alphaqq)";
-TTree *tsig = tsig_raw->CopyTree(cleanCut);
-TTree *tbkg = tbkg_raw->CopyTree(cleanCut);
-    // --- Cuts for training/testing split
-    TCut cut_even("T_event % 2 == 0");
-    TCut cut_odd ("T_event % 2 == 1");
-
-    // --- Helper lambda: train a model
-    auto TrainModel = [&](TTree *sig, TTree *bkg, TCut cut, TString modelName, TString weightFile) {
-        TString outFileName = "TMVA_" + modelName + ".root";
-        TFile *outFile = TFile::Open(outFileName, "RECREATE");
+auto TrainModel = [](TTree *sig, TTree *bkg, TCut cut, TString out_result_path ,TString model_fold , TString weight_path , TString class_path) {
+        TFile *outFile = TFile::Open(out_result_path, "RECREATE");
 
         TMVA::Factory *factory = new TMVA::Factory("MyJob", outFile,
             "!V:Color:DrawProgressBar:Transformations=I:AnalysisType=Classification");
 
-        TMVA::DataLoader *loader = new TMVA::DataLoader("dataset_" + modelName);
+        TMVA::DataLoader *loader = new TMVA::DataLoader("dataset_" + model_fold);
 
         // --- Define training variables
-        loader->AddVariable("T_mqq", 'F');
-        loader->AddVariable("T_dETAqq", 'F');
-        loader->AddVariable("T_dPHIqq", 'F');
-        loader->AddVariable("T_btgb1", 'F');
-        loader->AddVariable("T_btgb2", 'F');
-        loader->AddVariable("T_qglq1", 'F');
-        loader->AddVariable("T_qglq2", 'F');
-        loader->AddVariable("T_NJ_30", 'F');
-        loader->AddVariable("T_ptAll", 'F');
-        loader->AddVariable("T_pzAll", 'F');
-        loader->AddVariable("T_E_rest_30", 'F');
-        loader->AddVariable("T_HTT_rest_30", 'F');
-        loader->AddVariable("T_phiA_bb_qq", 'F');
-        loader->AddVariable("T_alphaqq", 'F');
-        loader->AddVariable("T_dR_subleadqH", 'F');
+        for (const auto& feature : features) {
+            loader->AddVariable(feature, 'F');
+        }
+        // loader->AddVariable("T_mqq", 'F');
+        // loader->AddVariable("T_dETAqq", 'F');
+        // loader->AddVariable("T_dPHIqq", 'F');
+        // loader->AddVariable("T_btgb1", 'F');
+        // loader->AddVariable("T_btgb2", 'F');
+        // loader->AddVariable("T_qglq1", 'F');
+        // loader->AddVariable("T_qglq2", 'F');
+        // loader->AddVariable("T_NJ_30", 'F');
+        // loader->AddVariable("T_ptAll", 'F');
+        // loader->AddVariable("T_pzAll", 'F');
+        // loader->AddVariable("T_E_rest_30", 'F');
+        // loader->AddVariable("T_HTT_rest_30", 'F');
+        // loader->AddVariable("T_phiA_bb_qq", 'F');
+        // loader->AddVariable("T_alphaqq", 'F');
+        // loader->AddVariable("T_dR_subleadqH", 'F');
 
         loader->AddSignalTree(sig, 1.0);
         loader->AddBackgroundTree(bkg, 1.0);
 
-        loader->SetSignalWeightExpression("T_weight");
-        loader->SetBackgroundWeightExpression("T_weight");
+        loader->SetSignalWeightExpression(sig_weight);
+        loader->SetBackgroundWeightExpression(bkg_weight);
 
         loader->PrepareTrainingAndTestTree(cut, cut,
             "nTrain_Signal=0:nTrain_Background=0:SplitMode=Random:NormMode=NumEvents:!V");
 
-        factory->BookMethod(loader, TMVA::Types::kBDT, "BDTG",
+        factory->BookMethod(loader, TMVA::Types::kBDT, modelName,
             "!H:!V:NTrees=850:BoostType=Grad:Shrinkage=0.10:UseBaggedBoost:BaggedSampleFraction=0.5:nCuts=15");
 
         factory->TrainAllMethods();
@@ -78,19 +62,41 @@ TTree *tbkg = tbkg_raw->CopyTree(cleanCut);
         delete loader;
 
         // rename weight file
-        TString src = "dataset_" + modelName + "/weights/" + modelName + "_BDTG.weights.xml";
-TString dest = "dataset_" + modelName + "/weights/" + modelName + "_BDTG_weight.xml";
-gSystem->Rename(src, dest);
+        TString src  = "dataset_" + model_fold + "/weights/MyJob_BDTG.weights.xml";
+        TString dest = weight_path;   // directly use the user-provided path
+        gSystem->Rename(src, dest);
+        // rename the class path 
+        TString src_class  = "dataset_" + model_fold + "/weights/MyJob_BDTG.class.C";
+        TString dest_class = class_path;
+        gSystem->Rename(src_class, dest_class);
 
-      //  gSystem->Rename(src, weightFile);
     };
 
+void TMVA_BDT(int nclasses = 2) {
+    // --- Init TMVA
+    TMVA::Tools::Instance();
+    // --- Input signal and background
+    TFile *fsig = TFile::Open(sig_file);
+    TFile *fbkg = TFile::Open(bkg_file);
+    TTree *tsig_raw = (TTree*)fsig->Get(tree_name);
+    TTree *tbkg_raw = (TTree*)fbkg->Get(tree_name);
+
+    // Clean: remove NaN/Inf in T_alphaqq
+    TString cleanCut = "!isnan(T_alphaqq) && !isinf(T_alphaqq)";
+    TTree *tsig = tsig_raw->CopyTree(cleanCut);
+    TTree *tbkg = tbkg_raw->CopyTree(cleanCut);
+    // --- Cuts for training/testing split
+    TCut cut_even("T_event % 2 == 0");
+    TCut cut_odd ("T_event % 2 == 1");
+
+    // --- Helper lambda: train a model
+    
     // --- Train even/odd models
-    TrainModel(tsig, tbkg, cut_even, "ModelEven", "weights_even.xml");
-    TrainModel(tsig, tbkg, cut_odd, "ModelOdd", "weights_odd.xml");
+    TrainModel(tsig, tbkg, cut_even,result_even_path, "Even", weights_even_path,class_even_path);
+    TrainModel(tsig, tbkg, cut_odd,result_odd_path ,"Odd", weights_odd_path,class_odd_path);
 
     std::cout << "==> Training finished, weights saved as weights_even.xml and weights_odd.xml" << std::endl;
-
+    /*
     // --- Apply model to prediction file
     TFile *fpred = TFile::Open("tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022.root", "UPDATE"); // just reuse signal.root for demo
     TTree *tpred = (TTree*)fpred->Get("tree");
@@ -160,6 +166,7 @@ gSystem->Rename(src, dest);
     fpred->Write("", TObject::kOverwrite);
     fpred->Close();
 
-    std::cout << "==> Applied BDT scores stored in signal.root" << std::endl;
+    std::cout << "==> Applied BDT scores stored in signal.root" << std::endl; 
+*/
 }
 
