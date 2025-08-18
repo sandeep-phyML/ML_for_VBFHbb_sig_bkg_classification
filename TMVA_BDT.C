@@ -35,77 +35,8 @@ void TMVA_BDT(int nclasses = 2) {
     TrainModel(tsig, tbkg, cut_odd,result_odd_path ,"Odd", weights_odd_path,class_odd_path);
 
     std::cout << "==> Training finished, weights saved as  " <<weights_even_path << " and "<<  weights_odd_path << std::endl;
-    /*
-    // --- Apply model to prediction file
-    TFile *fpred = TFile::Open("tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022.root", "UPDATE"); // just reuse signal.root for demo
-    TTree *tpred = (TTree*)fpred->Get("tree");
+    predict_bdt_score(pred_file);
 
-    TMVA::Reader *readerEven = new TMVA::Reader("!Color:!Silent");
-    TMVA::Reader *readerOdd  = new TMVA::Reader("!Color:!Silent");
+};
 
-    // --- Variable setup
-    Float_t T_mqq, T_dETAqq, T_dPHIqq, T_btgb1, T_btgb2;
-    Float_t T_qglq1, T_qglq2, T_NJ_30, T_ptAll, T_pzAll;
-    Float_t T_E_rest_30, T_HTT_rest_30, T_phiA_bb_qq, T_alphaqq, T_dR_subleadqH;
-
-    tpred->SetBranchAddress("T_mqq", &T_mqq);
-    tpred->SetBranchAddress("T_dETAqq", &T_dETAqq);
-    tpred->SetBranchAddress("T_dPHIqq", &T_dPHIqq);
-    tpred->SetBranchAddress("T_btgb1", &T_btgb1);
-    tpred->SetBranchAddress("T_btgb2", &T_btgb2);
-    tpred->SetBranchAddress("T_qglq1", &T_qglq1);
-    tpred->SetBranchAddress("T_qglq2", &T_qglq2);
-    tpred->SetBranchAddress("T_NJ_30", &T_NJ_30);
-    tpred->SetBranchAddress("T_ptAll", &T_ptAll);
-    tpred->SetBranchAddress("T_pzAll", &T_pzAll);
-    tpred->SetBranchAddress("T_E_rest_30", &T_E_rest_30);
-    tpred->SetBranchAddress("T_HTT_rest_30", &T_HTT_rest_30);
-    tpred->SetBranchAddress("T_phiA_bb_qq", &T_phiA_bb_qq);
-    tpred->SetBranchAddress("T_alphaqq", &T_alphaqq);
-    tpred->SetBranchAddress("T_dR_subleadqH", &T_dR_subleadqH);
-
-    // add vars to reader
-    auto addVars = [&](TMVA::Reader* reader){
-        reader->AddVariable("T_mqq", &T_mqq);
-        reader->AddVariable("T_dETAqq", &T_dETAqq);
-        reader->AddVariable("T_dPHIqq", &T_dPHIqq);
-        reader->AddVariable("T_btgb1", &T_btgb1);
-        reader->AddVariable("T_btgb2", &T_btgb2);
-        reader->AddVariable("T_qglq1", &T_qglq1);
-        reader->AddVariable("T_qglq2", &T_qglq2);
-        reader->AddVariable("T_NJ_30", &T_NJ_30);
-        reader->AddVariable("T_ptAll", &T_ptAll);
-        reader->AddVariable("T_pzAll", &T_pzAll);
-        reader->AddVariable("T_E_rest_30", &T_E_rest_30);
-        reader->AddVariable("T_HTT_rest_30", &T_HTT_rest_30);
-        reader->AddVariable("T_phiA_bb_qq", &T_phiA_bb_qq);
-        reader->AddVariable("T_alphaqq", &T_alphaqq);
-        reader->AddVariable("T_dR_subleadqH", &T_dR_subleadqH);
-    };
-
-    addVars(readerEven);
-    addVars(readerOdd);
-
-    readerEven->BookMVA("BDTG", "dataset_ModelEven/weights/MyJob_BDTG.weights.xml");
-    readerOdd ->BookMVA("BDTG", "dataset_ModelOdd/weights/MyJob_BDTG.weights.xml");
-
-    Float_t BDT_Score;
-    TBranch *b_bdt = tpred->Branch("BDT_Score", &BDT_Score, "BDT_Score/F");
-
-    Long64_t nentries = tpred->GetEntries();
-    for (Long64_t i=0; i<nentries; i++) {
-        tpred->GetEntry(i);
-        if ( (int)tpred->GetLeaf("T_event")->GetValue() % 2 == 0 )
-            BDT_Score = readerOdd->EvaluateMVA("BDTG");
-        else
-            BDT_Score = readerEven->EvaluateMVA("BDTG");
-        b_bdt->Fill();
-    }
-
-    fpred->Write("", TObject::kOverwrite);
-    fpred->Close();
-
-    std::cout << "==> Applied BDT scores stored in signal.root" << std::endl; 
-*/
-}
 

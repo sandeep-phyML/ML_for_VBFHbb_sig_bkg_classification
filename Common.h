@@ -9,6 +9,29 @@ std::vector<std::string> features = {"T_mqq","T_dETAqq","T_dPHIqq", "T_btgb1","T
  "T_qglq2", "T_NJ_30", "T_ptAll", "T_pzAll", "T_E_rest_30", 
  "T_HTT_rest_30", "T_phiA_bb_qq","T_alphaqq", "T_dR_subleadqH"};
 
+Float_t T_mqq, T_dETAqq, T_dPHIqq, T_btgb1, T_btgb2;
+Float_t T_qglq1, T_qglq2, T_NJ_30, T_ptAll, T_pzAll;
+Float_t T_E_rest_30, T_HTT_rest_30, T_phiA_bb_qq, T_alphaqq, T_dR_subleadqH;
+
+// Store variable metadata
+std::vector<std::pair<std::string, Float_t*>> vars = {
+    {"T_mqq", &T_mqq},
+    {"T_dETAqq", &T_dETAqq},
+    {"T_dPHIqq", &T_dPHIqq},
+    {"T_btgb1", &T_btgb1},
+    {"T_btgb2", &T_btgb2},
+    {"T_qglq1", &T_qglq1},
+    {"T_qglq2", &T_qglq2},
+    {"T_NJ_30", &T_NJ_30},
+    {"T_ptAll", &T_ptAll},
+    {"T_pzAll", &T_pzAll},
+    {"T_E_rest_30", &T_E_rest_30},
+    {"T_HTT_rest_30", &T_HTT_rest_30},
+    {"T_phiA_bb_qq", &T_phiA_bb_qq},
+    {"T_alphaqq", &T_alphaqq},
+    {"T_dR_subleadqH", &T_dR_subleadqH}
+};
+
 // weight variables 
 TString sig_weight = "T_weight*LUMI*T_HLTweight*T_PUweight*T_btag_weight_central";
 TString bkg_weight = "T_weight";
@@ -28,7 +51,7 @@ TString bkg_file = train_folder_path + "tree_JetMET_2022_5perc.root";
 
 
 // file paths and names for prediction sample
-
+TString pred_file = train_folder_path + "tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022.root";
 
 
 // output file names and path for results 
