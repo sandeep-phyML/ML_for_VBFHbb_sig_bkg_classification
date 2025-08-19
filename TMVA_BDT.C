@@ -19,9 +19,12 @@ void TMVA_BDT(int nclasses = 2) {
     // --- Input signal and background
     if (nclasses == 2) {
         TrainBiclassBDTG();
+        predict_bdt_score(pred_file, false);
     }
-    predict_bdt_score(pred_file);
-
+    else{
+        //TrainMClassBDTG();
+        predict_bdt_score(pred_file, true);
+    }
 };
 
 
