@@ -105,10 +105,12 @@ auto TrainModelMClass = [](std::vector<TTree*> classTrees, TCut cut,TString out_
     delete factory;
     delete loader;
     // --- Rename output weight files
-    TString src  = "dataset_" + model_fold + "/weights/MyJob_BDT.weights.xml";
+    TString src  = "dataset_" + model_fold + "/weights/MyJob_BDTG.weights.xml";
     gSystem->Rename(src, weight_path);
-    TString src_class = "dataset_" + model_fold + "/weights/MyJob_BDT.class.C";
+    TString src_class = "dataset_" + model_fold + "/weights/MyJob_BDTG.class.C";
     gSystem->Rename(src_class, class_path);
+    
+    
 };
 
 auto TrainMClassBDTG = [](){
@@ -189,7 +191,7 @@ auto predict_bdt_score = [](TString pred_path , bool isMulticlass = false) {
             else 
                 *std::get<1>(biclass_pred_vars) = readerEven->EvaluateMVA(modelName);
         }
-         tpred->Fill();
+        
     }
 
        
