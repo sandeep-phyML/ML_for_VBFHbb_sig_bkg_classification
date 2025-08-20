@@ -15,12 +15,17 @@ is_resampling : true
 mass_norm  : true 
 tree_name : tree
 event_branch : T_event
+
 train_features: [
-  T_qglq1, T_qglq2, T_ptq1, T_ptq2, T_phiq1, T_phiq2,  T_etaq1, T_etaq2,
-  T_NJ_30, T_alphaqq, T_mqq, T_dETAqq, T_dPHIqq, T_btgb1, T_btgb2, T_HTT_rest_30,
-  T_enq1, T_enq2, T_zep, T_phiA_bb_qq, T_dR_leadqH, T_norm_pt, T_dR_subleadqH,
-  T_pzAll, era, T_minR
+   T_ptq1, T_ptq2,T_enq1, T_enq2,T_phiq1, T_phiq2,  T_etaq1, T_etaq2,T_mqq, T_norm_pt , T_dR_subleadqH,
+   T_phiA_bb_qq, T_alphaqq,T_HTT_rest_30,T_NJ_30,T_pzAll,T_btgb1, T_btgb2,T_dETAqq, T_dPHIqq
 ]
+# train_features: [
+#   T_qglq1, T_qglq2, T_ptq1, T_ptq2, T_phiq1, T_phiq2,  T_etaq1, T_etaq2,
+#   T_NJ_30, T_alphaqq, T_mqq, T_dETAqq, T_dPHIqq, T_btgb1, T_btgb2, T_HTT_rest_30,
+#   T_enq1, T_enq2, T_zep, T_phiA_bb_qq, T_dR_leadqH, T_norm_pt, T_dR_subleadqH,
+#   T_pzAll, era, T_minR
+# ]
 
 weight_features:
   - T_weight
@@ -32,44 +37,44 @@ weight_features:
 train_mclass_files_labels:
   folder_path : /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/
   file_names_labels:
-    - file_name: tree_JetMET_2022_5perc.root
+    - file_name: tree_JetMET_2022_btgsf_5perc.root
       label: 0
       branch_name: DNN_QCD
-    - file_name: tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022.root
+    - file_name: tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root
       label: 1
       branch_name: DNN_VBF
-    - file_name: tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022.root
+    - file_name: tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root
       label: 2
       branch_name: DNN_GGH
-    - file_name: tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022.root
+    - file_name: tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root
       label: 3
       branch_name: DNN_TT
-    - file_name: tree_Zto2Q-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022.root
+    - file_name: tree_Zto2Q-4Jets_2022_btgsf.root
       label: 4
       branch_name: DNN_Z2Q
 
 train_biclass_files_labels:
   folder_path : /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/
   file_names_labels:
-    - file_name: tree_JetMET_2022_5perc.root
+    - file_name: tree_JetMET_2022_btgsf_5perc.root
       label: 0
       branch_name: DNN_BiClass
-    - file_name: tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022.root
+    - file_name: tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root
       label: 1
       branch_name: DNN_BiClass
-full_data_path :   /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022.root
+full_data_path :   /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf.root
 
 prediction_files:
   folder_path : /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/
   file_names:
-    - tree_JetMET_2022.root
-    - tree_JetMET_2022_5perc.root
-    - tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022.root
-    - tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022.root
-    - tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022.root
-    - tree_Zto2Q-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022.root
-    - tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022.root
-    - tree_JetMET_2022.root
+    - tree_JetMET_2022_btgsf.root
+    - tree_JetMET_2022_btgsf_5perc.root
+    - tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root
+    - tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root
+    - tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root
+    - tree_Zto2Q-4Jets_2022_btgsf.root
+    - tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root
+   
   
 output_plot_models:
   folder_path : /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/
@@ -103,31 +108,31 @@ variable_distribution_files:
     - DNN_QCD
     - DNN_TT
   file_names_legend_colors:
-    - file_name : tree_JetMET_2022_5perc.root
+    - file_name : tree_JetMET_2022_btgsf_5perc.root
       legend : JetMET 2022 5%
       color : blue
-    - file_name : tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022.root
+    - file_name : tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root
       legend : VBFHto2B M-125
       color : red
-    - file_name : tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022.root
+    - file_name : tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root
       legend : GluGluHto2B M-125
       color : green
-    - file_name : tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022.root
+    - file_name : tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root
       legend : TTto4Q
       color : orange
-    - file_name : tree_Zto2Q-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022.root
+    - file_name : tree_Zto2Q-4Jets_2022_btgsf.root
       legend : Zto2Q-4Jets HT
       color : purple
-    - file_name : tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022.root
+    - file_name : tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root
       legend : QCD-4Jets HT
       color : cyan
 
 roc_curve_files:
   folder_path : /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/
   file_names_labels:
-    - file_name : tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022.root
+    - file_name : tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root
       label : 1
-    - file_name : tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022.root
+    - file_name : tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root
       label : 0
   file_names_loss_acc_train_val:
     bdt_biclass_even_file_name : loss_acc_train_val_biclass_bdt_even.png
@@ -139,7 +144,7 @@ roc_curve_files:
 
 
 mbb_distribution_files_dnn_cuts:
-  file_path : /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022.root
+  file_path : /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf.root
   dnn_cuts:
     - dnn_cut : 0
       legend : DNN Cut > 0
