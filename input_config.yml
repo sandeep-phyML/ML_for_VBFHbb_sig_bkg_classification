@@ -32,6 +32,7 @@ weight_features:
   - T_HLTweight
   - T_PUweight
   - T_btag_weight_central
+  - T_online_btag_weight
   - LUMI
 
 train_mclass_files_labels:
