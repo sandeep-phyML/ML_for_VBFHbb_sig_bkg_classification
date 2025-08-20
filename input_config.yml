@@ -57,11 +57,12 @@ train_biclass_files_labels:
     - file_name: tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022.root
       label: 1
       branch_name: DNN_BiClass
-  
+full_data_path :   /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022.root
 
 prediction_files:
   folder_path : /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/
   file_names:
+    - tree_JetMET_2022.root
     - tree_JetMET_2022_5perc.root
     - tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022.root
     - tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022.root

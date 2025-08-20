@@ -27,7 +27,7 @@ def save_output(out_data , ofile_path: str = "model_summary.txt"):
         f.write(out_data + "\n")
 
 class PrepareDataset():
-    def __init__(self , config: Dict[str, any], output_log_path: str, is_biclass: bool ):
+    def __init__(self , config: Dict[str, any], output_log_path: str, is_biclass: bool = True):
         self.config = config
         self.train_feature = self.config['train_features']
         self.weight_features = self.config["weight_features"]
@@ -52,7 +52,17 @@ class PrepareDataset():
         pd_data = file_data.arrays(file_data.keys(), library="pd")
         save_output(f"Converted {input_file} to pandas DataFrame with shape {pd_data.shape}",ofile_path = self.output_file_path)
         return pd_data
-        
+    
+    def resample_events(self, pd_data: pd.DataFrame) -> pd.DataFrame:
+        replace = self.nsample > len(pd_data)
+        resampled_data = pd_data.sample(n=self.nsample, replace=replace, random_state=42).reset_index(drop=True)
+        save_output(f"Resampled data to {self.nsample} events with replacement={replace}",ofile_path = self.output_file_path)
+        return resampled_data
+    def add_label_branch(self, pd_data: pd.DataFrame, label: int) -> pd.DataFrame:
+        pd_data[self.label_branch_name] = np.full(len(pd_data), label)
+        save_output(f"Added label branch with value {label}",ofile_path = self.output_file_path)
+        return pd_data
+
     def get_weight_branch_(self, pd_data: pd.DataFrame) -> Tuple[pd.DataFrame, str]:
         new_pd_data = pd_data.copy()
         new_pd_data[self.total_weight_branch] = np.ones(len(new_pd_data))
@@ -71,18 +81,6 @@ class PrepareDataset():
         pd_data[self.norm_branch] = pd_data[self.total_weight_branch] * scale_weight * median_weights_
         save_output(f"Normalised weights with median scaling applied",ofile_path = self.output_file_path)
         return pd_data 
-  
-    def add_label_branch(self, pd_data: pd.DataFrame, label: int) -> pd.DataFrame:
-        pd_data[self.label_branch_name] = np.full(len(pd_data), label)
-        save_output(f"Added label branch with value {label}",ofile_path = self.output_file_path)
-        return pd_data
-
-    def resample_events(self, pd_data: pd.DataFrame) -> pd.DataFrame:
-        replace = self.nsample > len(pd_data)
-        resampled_data = pd_data.sample(n=self.nsample, replace=replace, random_state=42).reset_index(drop=True)
-        save_output(f"Resampled data to {self.nsample} events with replacement={replace}",ofile_path = self.output_file_path)
-        return resampled_data
-
         
     def replace_nan_inf_with_zero(self, pd_data: pd.DataFrame) -> pd.DataFrame:
         pd_data = pd_data.replace([np.nan, np.inf, -np.inf], 0)
@@ -150,6 +148,35 @@ class PrepareDataset():
             f["tree"] = selected_data
         save_output(f"Created 5% sample data from {infile_path} , selected event {len(selected_data)} from {len(pd_data)} ", ofile_path=self.output_file_path)
         return True 
+    def prepare_data_for_bdt_training(self, input_file: str, output_file: str,nsample:int,filter_branches,cuts ,weight_branch:str = "train_weight"  ) -> bool:
+        print(f"Preparing data for BDT training from {input_file} to {output_file} with nsample {nsample}, filter branches {filter_branches}, cuts {cuts}, weight branch {weight_branch}")
+        self.norm_branch = weight_branch
+        self.nsample = nsample
+        pd_data_ = self.convert_tree_to_pd(input_file)
+        pd_data_ = self.add_event_filter(pd_data_,filter_branches, cuts)
+        pd_data_ = self.resample_events(pd_data_)
+        pd_data_= self.get_weight_branch_(pd_data_)
+        pd_data_ = self.normalise_the_weight(pd_data_ )
+        pd_data_ = self.replace_nan_inf_with_zero(pd_data_)
+        print(f"Saving processed data for bdt training  to {output_file} with shape {pd_data_.shape}")
+        with uproot.recreate(output_file) as f:
+            f["tree"] = pd_data_
+            return True
+    def filter_nan_with_zero_event_sel(self, input_file: str ,filter_branches,cuts) -> bool:
+        print(f"Filtering NaN and Inf values in {input_file} with branches {filter_branches} and cuts {cuts}")
+        pd_data_ = self.convert_tree_to_pd(input_file)
+        pd_data_ = self.replace_nan_inf_with_zero(pd_data_)
+        pd_data_ = self.add_event_filter(pd_data_,filter_branches, cuts)
+        with uproot.recreate(input_file) as f:
+            f["tree"] = pd_data_
+            return True
+    def add_event_filter(self,data: pd.DataFrame, event_branchs , cuts) -> pd.DataFrame:
+        # here cuts are applied and ,
+        for index , branch in enumerate(event_branchs):
+            print(f"Applying cut on branch {branch} with value {cuts[index]}")
+            data = data[data[branch]>=cuts[index]]
+            print(f"Data shape after cut on {branch}: {data.shape}")
+        return data
     
 
 
