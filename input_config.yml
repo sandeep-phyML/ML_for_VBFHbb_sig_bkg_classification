@@ -1,14 +1,22 @@
-learning_rate : 0.001
+learning_rate : 0.0001
 batch_size : 512
 num_epochs : 50
-nsamples : 500000
+nsamples : 300000
 act_hidden_layer : elu
 act_output_layer_mclass : softmax
 act_output_layer_binary : sigmoid
 loss_function_mclass : SparseCategoricalCrossentropy
 loss_function_binary : binary_crossentropy
 verbose : 1
-patience : 10
+patience : 5
+verbose : 1
+restore_best_weights : True
+start_from_epoch : 10
+monitor : 'val_accuracy'
+decay_rate : 0.05
+start_decay : 10
+accuracy_threshold : 0.1
+loss_threshold : 0.1
 is_training : true
 is_prediction : true
 is_resampling : true
@@ -16,16 +24,16 @@ mass_norm  : true
 tree_name : tree
 event_branch : T_event
 
-train_features: [
-   T_ptq1, T_ptq2,T_enq1, T_enq2,T_phiq1, T_phiq2,  T_etaq1, T_etaq2,T_mqq, T_norm_pt , T_dR_subleadqH,
-   T_phiA_bb_qq, T_alphaqq,T_HTT_rest_30,T_NJ_30,T_pzAll,T_btgb1, T_btgb2,T_dETAqq, T_dPHIqq
-]
 # train_features: [
-#   T_qglq1, T_qglq2, T_ptq1, T_ptq2, T_phiq1, T_phiq2,  T_etaq1, T_etaq2,
-#   T_NJ_30, T_alphaqq, T_mqq, T_dETAqq, T_dPHIqq, T_btgb1, T_btgb2, T_HTT_rest_30,
-#   T_enq1, T_enq2, T_zep, T_phiA_bb_qq, T_dR_leadqH, T_norm_pt, T_dR_subleadqH,
-#   T_pzAll, era, T_minR
+#    T_ptq1, T_ptq2,T_enq1, T_enq2,T_phiq1, T_phiq2,  T_etaq1, T_etaq2,T_mqq, T_norm_pt , T_dR_subleadqH,
+#    T_phiA_bb_qq, T_alphaqq,T_HTT_rest_30,T_NJ_30,T_pzAll,T_btgb1, T_btgb2,T_dETAqq, T_dPHIqq
 # ]
+train_features: [
+  T_qglq1, T_qglq2, T_ptq1, T_ptq2, T_phiq1, T_phiq2,  T_etaq1, T_etaq2,
+  T_NJ_30, T_alphaqq, T_mqq, T_dETAqq, T_dPHIqq, T_btgb1, T_btgb2, T_HTT_rest_30,
+  T_enq1, T_enq2, T_zep, T_phiA_bb_qq, T_dR_leadqH, T_norm_pt, T_dR_subleadqH,
+  T_pzAll, era, T_minR
+]
 
 weight_features:
   - T_weight
@@ -99,15 +107,8 @@ output_plot_models:
     even_model : even_biclass_bdt.keras
 
 variable_distribution_files:
-  folder_path : /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/
-  biclass_branch : DNN_BiClass
-  mclass_branches_vbf_qcd : 
-    - DNN_VBF
-    - DNN_QCD
-  mclass_branches_vbf_qcd_tth :
-    - DNN_VBF
-    - DNN_QCD
-    - DNN_TT
+  save_folder_path : /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/
+  input_folder_path : /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/
   file_names_legend_colors:
     - file_name : tree_JetMET_2022_btgsf_5perc.root
       legend : JetMET 2022 5%
@@ -129,7 +130,8 @@ variable_distribution_files:
       color : cyan
 
 roc_curve_files:
-  folder_path : /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/
+  save_folder_path : /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/
+  input_folder_path : /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/
   file_names_labels:
     - file_name : tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root
       label : 1
@@ -159,12 +161,3 @@ output_log :
 
 
 
-verbose : 1
-patience : 5
-restore_best_weights : True
-start_from_epoch : 10
-monitor : 'val_accuracy'
-decay_rate : 0.05
-start_decay : 10
-accuracy_threshold : 0.1
-loss_threshold : 0.1

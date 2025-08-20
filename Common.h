@@ -28,8 +28,8 @@ std::vector<std::pair<std::string, Float_t*>> vars = {
 // ----------------------------------------------------------------------
 
 // weights for training -------------------------------------------------
-TString mc_weight = "T_weight*LUMI*T_HLTweight*T_PUweight*T_btag_weight_central";
-TString data_weight = "T_weight";
+TString mc_weight = "train_weight";
+TString data_weight = "train_weight";
 std::vector<double> classWeights = {1.0, 1.0, 1.0, 1.0, 1.0}; // if you assymetric train data class , change here 
 TString sig_weight = mc_weight;
 TString bkg_weight = data_weight;
@@ -39,15 +39,15 @@ std::vector<TString> weightBranches = {
 // ----------------------------------------------------------------------
 
 // file paths for the training bDTG -------------------------------------
-TString train_folder_path = "/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/";
-TString sig_file = train_folder_path + "tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022.root";
-TString bkg_file = train_folder_path + "tree_JetMET_2022_5perc.root";
+TString train_folder_path = "/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/BDT_Train_Inputs_Ntuples/";
+TString sig_file = train_folder_path + "tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root";
+TString bkg_file = train_folder_path + "tree_JetMET_2022_btgsf_5perc.root";
 std::vector<TString> mclass_train_paths = {
-    train_folder_path + "tree_JetMET_2022_5perc.root",
-    train_folder_path + "tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022.root",
-    train_folder_path + "tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022.root",
-    train_folder_path + "tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022.root",
-    train_folder_path + "tree_Zto2Q-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022.root"
+    train_folder_path + "tree_JetMET_2022_btgsf_5perc.root",
+    train_folder_path + "tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root",
+    train_folder_path + "tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root",
+    train_folder_path + "tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root",
+    train_folder_path + "tree_Zto2Q-4Jets_2022_btgsf.root"
 };
 
 // ----------------------------------------------------------------------
@@ -70,7 +70,17 @@ TString biclass_even_path = output_folder_path + "bclass_even.C";
 // ----------------------------------------------------------------------
 
 // files for prediction -----------------------------------------
-TString pred_file = train_folder_path + "tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022.root";
+TString pred_folder_path = "/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/";
+std::vector<TString> pred_files = {
+    train_folder_path + "tree_JetMET_2022_btgsf_5perc.root",
+    train_folder_path + "tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root",
+    train_folder_path + "tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root",
+    train_folder_path + "tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root",
+    train_folder_path + "tree_Zto2Q-4Jets_2022_btgsf.root" ,
+    train_folder_path + "tree_JetMET_2022_btgsf.root" ,
+    train_folder_path + "tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root",
+    train_folder_path + "tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root"
+};
 //---------------------------------------------------------------
 
 // output branch names -------------------------------------------------

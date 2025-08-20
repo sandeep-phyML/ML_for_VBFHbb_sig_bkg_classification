@@ -133,6 +133,7 @@ class PrepareDataset():
         for file in self.pred_paths:
             all_data[file] = {"odd_data": {}, "even_data": {}}
             pd_data_ = self.convert_tree_to_pd(file)
+            print(f"Processing file: {file} with shape {pd_data_.shape}")
             odd_data_ = pd_data_[pd_data_[self.event_branch] % 2 == 1].reset_index(drop=True)
             even_data_ = pd_data_[pd_data_[self.event_branch] % 2 == 0].reset_index(drop=True)
             all_data[file]["odd_data"]["full_data_"] = odd_data_
@@ -140,6 +141,7 @@ class PrepareDataset():
             all_data[file]["odd_data"]["features"] = self.replace_nan_inf_with_zero(odd_data_.filter(self.train_feature)).to_numpy()
             all_data[file]["even_data"]["features"] = self.replace_nan_inf_with_zero(even_data_.filter(self.train_feature)).to_numpy()
             save_output(f"Processed file {file} - Odd features shape: {all_data[file]['odd_data']['features'].shape}, Even features shape: {all_data[file]['even_data']['features'].shape}", ofile_path=self.output_file_path)
+            print(f"Processed file {file} - Odd features shape: {all_data[file]['odd_data']['features'].shape}, Even features shape: {all_data[file]['even_data']['features'].shape}")
         return all_data
     def create_five_perc_data(self,infile_path):
         pd_data = self.convert_tree_to_pd(infile_path)
@@ -186,7 +188,8 @@ class Plot():
         self.tree_name = config["tree_name"]
         self.history_out_path = log_path
         self.train_features = config["train_features"]
-        self.is_mclass = config["is_mclass"]
+        
+        
     
     def plot_tprofile(self,file_path ,save_path, is_mclass = True ,is_data = False,nbins = 50,mbb_range=(110.0, 140.0),vbfbclass="BiClassANN",vbf_dnn = "VBF_DNN",qcd_dnn = "QCD_DNN"):
         save_output(f"Plotting TProfile from file: {file_path}, is_mclass = {is_mclass} , vbfbclass={vbfbclass},vbf_dnn = {vbf_dnn},qcd_dnn = {qcd_dnn} ", ofile_path=self.history_out_path)
@@ -287,10 +290,14 @@ class Plot():
         # Cleanup
         file.Close()
     
-    def plot_var_distribution(self, branch_names:List[str], files_colour_legend_dict, folder_path , save_path , range_=(0, 1),nbin = 25):
+    def plot_var_distribution(self, branch_names:List[str],   range_=(0, 1),nbin = 25):
+        out_file_name = "_".join(branch_names) + "_distribution.png"
+        input_file_info = self.config["variable_distribution_files"]
+        save_path = os.path.join(input_file_info["save_folder_path"], out_file_name)
+        folder_path = input_file_info["input_folder_path"]
         plt.figure(figsize=(8, 6))
-        for file_colour_legend in files_colour_legend_dict:
-            file_name, color, label = file_colour_legend
+        for file_colour_legend in input_file_info["file_names_legend_colors"]:
+            file_name, color, label = file_colour_legend["file_name"], file_colour_legend["color"], file_colour_legend["legend"]
             file_path = os.path.join(folder_path, file_name)
             try:
                 df = uproot.open(f"{file_path}:tree").arrays(branch_names, library="pd")
@@ -318,31 +325,87 @@ class Plot():
                 plt.margins(x=0)
             except Exception as e:
                 print(f"Failed for {file_path}: {e}")
-        plt.xlabel(branch_name)
+        label_name = " / ".join(branch_names)
+        plt.xlabel(label_name)
+        
         plt.ylabel("Normalized Entries (Sum = 1)")
         plt.legend()
         plt.grid(True, linestyle="--", alpha=0.6)
-        plt.title(f"Distribution of {branch_name}")
+        plt.title(f"Distribution of {label_name}")
         plt.tight_layout()
         plt.savefig(f"{save_path}")
-        plt.show()
+        print(f"Saved variable distribution plot to {save_path}")
         save_output(f"Saved variable distribution plot to {save_path}",ofile_path = self.history_out_path)
 
-    def plot_roc_curve(self, y_true, y_score , save_path , label="Model"):
-        fpr, tpr, _ = roc_curve(y_true, y_score)
-        auc_val = auc(fpr, tpr)
-        plt.figure(figsize=(6, 5))
-        plt.plot(fpr, tpr, label=f"{label} (AUC = {auc_val:.2f})")
-        plt.plot([0, 1], [0, 1], "k--")
+
+
+    def plot_roc_curve(self, branch_names: List[str]):
+        input_file_info = self.config["roc_curve_files"]
+        save_folder = input_file_info["save_folder_path"]
+        input_folder = input_file_info["input_folder_path"]
+        file_entries = input_file_info["file_names_labels"]
+
+        y_true_even, y_score_even = [], []
+        y_true_odd, y_score_odd = [], []
+
+        for entry in file_entries:
+            file_name = entry["file_name"]
+            label = int(entry["label"])  
+            file_path = os.path.join(input_folder, file_name)
+            print(f"Processing file: {file_path} for branches {branch_names} with label {label}")
+
+            try:
+                df = uproot.open(f"{file_path}:tree").arrays(branch_names + ["T_event"], library="pd")
+                df = df.replace([np.inf, -np.inf], np.nan).dropna()
+                num = df[branch_names[0]]
+                if len(branch_names) > 1:
+                    den = df[branch_names[0]]
+                    for branch in branch_names[1:]:
+                        den += df[branch]
+                else:
+                    den = 1.0
+                score = (num / den).replace([np.inf, -np.inf], np.nan).dropna()
+                df["score"] = score
+                df["label"] = label
+
+                even_mask = (df["T_event"] % 2 == 0)
+                odd_mask = ~even_mask
+
+                y_true_even.extend(df.loc[even_mask, "label"].tolist())
+                y_score_even.extend(df.loc[even_mask, "score"].tolist())
+
+                y_true_odd.extend(df.loc[odd_mask, "label"].tolist())
+                y_score_odd.extend(df.loc[odd_mask, "score"].tolist())
+
+                save_output(f"Processed file {file_name} for branches {branch_names} with label {label}", 
+                            ofile_path=self.history_out_path)
+
+            except Exception as e:
+                print(f"Failed for {file_name}: {e}")
+                continue
+
+        fpr_even, tpr_even, _ = roc_curve(y_true_even, y_score_even)
+        auc_even = auc(fpr_even, tpr_even)
+
+        fpr_odd, tpr_odd, _ = roc_curve(y_true_odd, y_score_odd)
+        auc_odd = auc(fpr_odd, tpr_odd)
+
+        plt.figure(figsize=(7, 6))
+        plt.plot(fpr_even, tpr_even, label=f"Even Events (AUC = {auc_even:.2f})", color='blue')
+        plt.plot(fpr_odd, tpr_odd, label=f"Odd Events (AUC = {auc_odd:.2f})", color='green')
+        plt.plot([0, 1], [0, 1], "k--", label="Random Guess")
         plt.xlabel("False Positive Rate")
         plt.ylabel("True Positive Rate")
-        plt.title("ROC Curve")
-        plt.grid(True)
+        plt.title("ROC Curve (Even vs Odd Events)")
         plt.legend()
+        plt.grid(True)
         plt.tight_layout()
+
+        out_file_name = "_".join(branch_names) + "_even_odd_roc_curve.png"
+        save_path = os.path.join(save_folder, out_file_name)
         plt.savefig(save_path)
-        plt.show()
-        save_output(f"Saved ROC curve plot to {save_path}",ofile_path = self.history_out_path)
+        print(f"Saved ROC curve plot to {save_path}")
+        save_output(f"Saved ROC curve plot to {save_path}", ofile_path=self.history_out_path)
 
 
 
@@ -479,10 +542,13 @@ class DNNModel():
             return False
         if even_model  and odd_model :
             for file_path in self.pred_data_dict.keys():
+                print(f"Predicting scores for file: {file_path}")
                 odd_data = self.pred_data_dict[file_path]['odd_data']['full_data_']
                 even_data = self.pred_data_dict[file_path]['even_data']['full_data_']
                 odd_feature_data = self.pred_data_dict[file_path]['odd_data']['features']
                 even_feature_data = self.pred_data_dict[file_path]['even_data']['features']
+                print("Odd feature data shape:", odd_feature_data.shape , "Odd data shape:", odd_data.shape)
+                print("Even feature data shape:", even_feature_data.shape , "Even data shape:", even_data.shape)
                 odd_scores = even_model.predict(odd_feature_data, batch_size=256).squeeze()
                 even_scores = odd_model.predict(even_feature_data, batch_size=256).squeeze()
                 if self.is_biclass:
@@ -496,7 +562,11 @@ class DNNModel():
                         odd_data[branch_name] = odd_scores[:,index]
                         even_data[branch_name] = even_scores[:,index]
                 combined_data = pd.concat([odd_data, even_data], ignore_index=True)
-                with uproot.update(file_path) as ofile:
+                print(combined_data.dtypes)
+                print(combined_data.max())
+                print(combined_data.min())
+
+                with uproot.recreate(file_path) as ofile:
                     ofile["tree"] = combined_data
                 save_output(f"Saved predictions to {file_path}", ofile_path=self.log_path )
                 print(f"Saved predictions to {file_path}")

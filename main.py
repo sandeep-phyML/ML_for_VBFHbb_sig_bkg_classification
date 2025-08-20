@@ -20,24 +20,24 @@ basic_tool = BasicMethods()
 config_file_name = "input_config.yml"
 config = basic_tool.read_config_file(config_file_name)
 log_path = os.path.join(config['output_log']['folder_path'],config['output_log']['file_name'])
-basic_tool.create_log_folder(log_path)
+# basic_tool.create_log_folder(log_path)
 if args.prepare_5perc:
     dataset_ = PrepareDataset(  config = config ,output_log_path = log_path , is_biclass = args.biclass)
     dataset_.create_five_perc_data( config["full_data_path"] )
 
 if args.process_data:
     dataset_ = PrepareDataset(  config = config ,output_log_path = log_path , is_biclass = args.biclass)
-    # for file in config["prediction_files"]["file_names"]: # clean the data , replace nan with zero and apply medium btag 
-    #     file_path = os.path.join(config["prediction_files"]["folder_path"], file)
-    #     dataset_.filter_nan_with_zero_event_sel( file_path ,["T_btgb1","T_btgb2"],[0.260,0.260])
+    for file in config["prediction_files"]["file_names"]: # clean the data , replace nan with zero and apply medium btag 
+        file_path = os.path.join(config["prediction_files"]["folder_path"], file)
+        dataset_.filter_nan_with_zero_event_sel( file_path ,["T_btgb1","T_btgb2"],[0.260,0.260])
     for file in config["train_mclass_files_labels"]["file_names_labels"]:
         file_path = os.path.join(config["train_mclass_files_labels"]["folder_path"], file["file_name"])
         output_file_path = os.path.join("/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/BDT_Train_Inputs_Ntuples/", file["file_name"])
         dataset_.prepare_data_for_bdt_training( file_path, output_file_path,args.nresample,["T_btgb1","T_btgb2"],[0.260,0.260] , "train_weight"  )
     
 # prepare the dataset for training
-if args.train or args.predict:
-    print("Preparing dataset for training or prediction...")
+if args.train :
+    print("Preparing dataset for training ")
     dataset_ = PrepareDataset(  config = config ,output_log_path = log_path , is_biclass = args.biclass)
     train_odd, train_even , weight_odd , weight_even , label_odd , label_even , mass_odd , mass_even = dataset_.get_np_feaweilabel_odd_even_train()
     print(train_odd.shape, label_odd.shape, weight_odd.shape)
@@ -51,24 +51,26 @@ if args.train or args.predict:
     model_.labels_even_data = label_even
     model_.weights_odd_data = weight_odd
     model_.weights_even_data = weight_even
-
-# compile , train and save the model weights
-if args.train:
     model_.compile_dnn_model()
     model_.train_dnn_model()
     model_.save_model_weights()
-'''
+
 # predict DNN score model 
 if args.predict:
-    model_.pred_data_dict = dataset_.prepare_pred_data()
-    model_.predict_mclass_model()
+    dataset_ = PrepareDataset(  config = config ,output_log_path = log_path , is_biclass = args.biclass)
+    model_ = DNNModel(config,log_path, is_biclass=args.biclass, is_bdt=args.bdt)
+    model_.pred_data_dict = dataset_.prepare_pred_data() # read all the files , from config and prepare even odd dataset , clean nan with zero etc 
+    model_.predict_dnn_score()
 
 # show results and save plots
 if args.results:
     plot_ = Plot(config, log_path)
-    plot_.plot_mclass_results(model_.pred_data_dict, model_.model_weights_path)
-    plot_.save_mclass_results(model_.pred_data_dict, model_.model_weights_path)
-    plot_.plot_mclass_loss(model_.loss_history, model_.model_weights_path)
-    plot_.save_mclass_loss(model_.loss_history, model_.model_weights_path)
-'''
+    plot_.plot_var_distribution(["DNN_BiClass"])
+    plot_.plot_var_distribution(["DNN_VBF","DNN_QCD"])
+    plot_.plot_var_distribution(["DNN_VBF","DNN_QCD","DNN_TT"])
+    plot_.plot_var_distribution(["DNN_QCD","DNN_VBF"])
+    plot_.plot_var_distribution(["DNN_Z2Q","DNN_QCD","DNN_TT"])
+    plot_.plot_var_distribution(["DNN_GGH","DNN_QCD","DNN_TT"])
+    plot_.plot_roc_curve(["DNN_BiClass"])
+    
 

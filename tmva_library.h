@@ -62,8 +62,8 @@ auto TrainBiclassBDTG = [](){
     TTree *tbkg_raw = (TTree*)fbkg->Get(tree_name);
     // Clean: remove NaN/Inf in T_alphaqq
     TString cleanCut = "!isnan(T_alphaqq) && !isinf(T_alphaqq)";
-    TTree *tsig = tsig_raw->CopyTree(cleanCut);
-    TTree *tbkg = tbkg_raw->CopyTree(cleanCut);
+    TTree *tsig = tsig_raw;
+    TTree *tbkg = tbkg_raw;
     // --- Cuts for training/testing split
     TCut cut_even("T_event % 2 == 0");
     TCut cut_odd ("T_event % 2 == 1");
@@ -125,9 +125,9 @@ auto TrainMClassBDTG = [](){
         }
         TTree *t_raw = (TTree*)f->Get(tree_name);
         TString cleanCut = "!isnan(T_alphaqq) && !isinf(T_alphaqq)";
-        TTree *t = t_raw->CopyTree(cleanCut);
-        t->SetDirectory(0);
-        f->Close();
+        TTree *t = t_raw;
+        // t->SetDirectory(0);
+        // f->Close();
         trees.push_back(t);
     }
     TCut cut_even("T_event % 2 == 0");
@@ -144,37 +144,70 @@ auto TrainMClassBDTG = [](){
 };
 
 auto predict_bdt_score = [](TString pred_path , bool isMulticlass = false) {
-    // Open the prediction file and get the tree
+    // Open the prediction file in UPDATE mode
     TFile *fpred = TFile::Open(pred_path, "UPDATE");
+    if (!fpred || fpred->IsZombie()) {
+        std::cerr << "Error opening file: " << pred_path << std::endl;
+        return;
+    }
+
     TTree *tpred = (TTree*)fpred->Get(tree_name);
+    if (!tpred) {
+        std::cerr << "Error: tree " << tree_name << " not found in file " << pred_path << std::endl;
+        fpred->Close();
+        return;
+    }
 
     TMVA::Reader *readerEven = new TMVA::Reader("!Color:!Silent");
     TMVA::Reader *readerOdd  = new TMVA::Reader("!Color:!Silent");
+
+    // Set input variable addresses
     for (auto &v : vars) {
         tpred->SetBranchAddress(v.first.c_str(), v.second);
     }
     addVars(readerEven);
     addVars(readerOdd);
 
+    // Setup prediction branches
+    std::vector<std::pair<TBranch*, bool>> predBranches; // {branch, branchExisted}
     if (isMulticlass) {
         readerEven->BookMVA(modelName, mclass_weights_even_path);
         readerOdd ->BookMVA(modelName, mclass_weights_odd_path);
-        for (const auto& var : mclass_pred_vars) {
-            tpred->Branch(std::get<0>(var).c_str(), std::get<1>(var), std::get<2>(var).c_str());
+
+        for (auto &var : mclass_pred_vars) {
+            TBranch *br = tpred->GetBranch(std::get<0>(var).c_str());
+            bool existed = (br != nullptr);
+            if (existed) {
+                tpred->SetBranchAddress(std::get<0>(var).c_str(), std::get<1>(var));
+            } else {
+                br = tpred->Branch(std::get<0>(var).c_str(),
+                                   std::get<1>(var),
+                                   std::get<2>(var).c_str());
+            }
+            predBranches.push_back({br, existed});
         }
-    }
-    else {
+    } else {
         readerEven->BookMVA(modelName, biclass_weights_even_path);
         readerOdd ->BookMVA(modelName, biclass_weights_odd_path);
-        tpred->Branch(std::get<0>(biclass_pred_vars).c_str(),
-                    std::get<1>(biclass_pred_vars),
-                    std::get<2>(biclass_pred_vars).c_str());
+
+        TString brName = std::get<0>(biclass_pred_vars);
+        TBranch *br = tpred->GetBranch(brName);
+        bool existed = (br != nullptr);
+        if (existed) {
+            tpred->SetBranchAddress(brName, std::get<1>(biclass_pred_vars));
+        } else {
+            br = tpred->Branch(brName,
+                               std::get<1>(biclass_pred_vars),
+                               std::get<2>(biclass_pred_vars).c_str());
+        }
+        predBranches.push_back({br, existed});
     }
 
+    // Loop over events and update predictions
     Long64_t nentries = tpred->GetEntries();
     for (Long64_t i=0; i<nentries; i++) {
         tpred->GetEntry(i);
-        
+
         if (isMulticlass) {
             std::vector<Float_t> probs;
             if ((int)tpred->GetLeaf("T_event")->GetValue() % 2 == 0)
@@ -183,20 +216,26 @@ auto predict_bdt_score = [](TString pred_path , bool isMulticlass = false) {
                 probs = readerEven->EvaluateMulticlass(modelName);
 
             for (size_t j = 0; j < mclass_pred_vars.size(); ++j) {
-                *std::get<1>(mclass_pred_vars[j]) = probs[j];  // ✅ store prob in variable
+                *std::get<1>(mclass_pred_vars[j]) = probs[j];
             }
         } else {
-            if ((int)tpred->GetLeaf("T_event")->GetValue() % 2 == 0) 
+            if ((int)tpred->GetLeaf("T_event")->GetValue() % 2 == 0)
                 *std::get<1>(biclass_pred_vars) = readerOdd->EvaluateMVA(modelName);
-            else 
+            else
                 *std::get<1>(biclass_pred_vars) = readerEven->EvaluateMVA(modelName);
         }
-        
+
+        // only call Fill() if branch was newly created
+        for (auto &p : predBranches) {
+            if (!p.second) p.first->Fill();
+        }
     }
 
-       
-    
-    fpred->Write("", TObject::kOverwrite);
+    // Write updated tree back to file
+    fpred->cd();
+    tpred->Write("", TObject::kOverwrite);
     fpred->Close();
-    std::cout << "==> Applied BDT scores stored in " << pred_path << "is multiclass " << isMulticlass << std::endl;
+
+    std::cout << "==> Applied BDT scores stored in " << pred_path 
+              << " (isMulticlass=" << isMulticlass << ")" << std::endl;
 };
