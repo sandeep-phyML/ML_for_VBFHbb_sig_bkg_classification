@@ -373,6 +373,12 @@ class DNNModel():
         else:
             self.odd_model_save_path = os.path.join(self.config['output_plot_models']["folder_path"], self.config['output_plot_models']["mclass_dnn_file_names"]["odd_model"])
             self.even_model_save_path = os.path.join(self.config['output_plot_models']["folder_path"], self.config['output_plot_models']["mclass_dnn_file_names"]["even_model"])
+        if is_biclass:
+            self.train_folder_path = self.config["train_biclass_files_labels"]["folder_path"]
+            self.file_label_list = self.config["train_biclass_files_labels"]["file_names_labels"]
+        else:
+            self.train_folder_path = self.config["train_mclass_files_labels"]["folder_path"]
+            self.file_label_list = self.config["train_mclass_files_labels"]["file_names_labels"]
         self.get_inshape_nclass_activ_loss()
         self.base_classifier = self.build_classifier()
         self.odd_classifier = clone_model(self.base_classifier)
@@ -460,11 +466,11 @@ class DNNModel():
             self.analyze_overfitting(history_odd, loss_threshold=self.config['accuracy_threshold'], acc_threshold=self.config['loss_threshold'] , is_even= False,is_biclass= True, is_bdt = False)
             self.analyze_overfitting(history_even, loss_threshold=self.config['accuracy_threshold'], acc_threshold=self.config['loss_threshold'] , is_even= True,is_biclass= True, is_bdt = False)
         save_output("Training completed for both odd and even classifiers", ofile_path=self.log_path )
-    def predict_mclass_model(self):
+    def predict_dnn_score(self):
         even_model = None
         odd_model = None
         try:
-            even_model = keras.models.load_model(self.even_model_save_path)
+            even_model = keras.models.load_model(self.even_model_save_path) # read file path for biclass or mclass from config based on is_biclass
             odd_model = keras.models.load_model(self.odd_model_save_path)
             save_output(f"Loaded odd classifier model from {self.odd_model_save_path}", ofile_path=self.log_path )
             save_output(f"Loaded even classifier model from {self.even_model_save_path}", ofile_path=self.log_path )
@@ -479,15 +485,25 @@ class DNNModel():
                 even_feature_data = self.pred_data_dict[file_path]['even_data']['features']
                 odd_scores = even_model.predict(odd_feature_data, batch_size=256).squeeze()
                 even_scores = odd_model.predict(even_feature_data, batch_size=256).squeeze()
-                for branch_index_info in self.config['train_files_labels']['file_names_labels']:
-                    index = branch_index_info["label"]
-                    branch_name = branch_index_info['branch_name']
-                    odd_data[branch_name] = odd_scores[:,index]
-                    even_data[branch_name] = even_scores[:,index]
+                if self.is_biclass:
+                    branch_name = self.file_label_list[0]["branch_name"]
+                    odd_data[branch_name] = odd_scores
+                    even_data[branch_name] = even_scores
+                else:
+                    for branch_index_info in self.file_label_list:
+                        index = branch_index_info["label"]
+                        branch_name = branch_index_info['branch_name']
+                        odd_data[branch_name] = odd_scores[:,index]
+                        even_data[branch_name] = even_scores[:,index]
                 combined_data = pd.concat([odd_data, even_data], ignore_index=True)
-                with uproot.recreate(file_path) as ofile:
+                with uproot.update(file_path) as ofile:
                     ofile["tree"] = combined_data
                 save_output(f"Saved predictions to {file_path}", ofile_path=self.log_path )
+                print(f"Saved predictions to {file_path}")
+        else:
+            save_output("Models not loaded successfully, cannot predict", ofile_path=self.log_path )
+            print("Models not loaded successfully, cannot predict")
+            return False
         
     def save_model_weights(self):
         odd_model_path = self.odd_model_save_path 
@@ -570,6 +586,8 @@ class DNNModel():
     
         plt.tight_layout()
         plt.savefig(file_path)
+        print(f"Saved loss and accuracy plots to {file_path}")
+        save_output(f"Saved loss and accuracy plots to {file_path}", ofile_path=self.log_path )
         # plt.show()
     
         # Check for overfitting
