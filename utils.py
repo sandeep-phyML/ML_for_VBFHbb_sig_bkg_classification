@@ -23,6 +23,7 @@ import array
 from tensorflow.keras.layers import Layer
 import yaml
 def save_output(out_data , ofile_path: str = "model_summary.txt"):
+    print(out_data)
     with open(ofile_path, "a") as f:
         f.write(out_data + "\n")
 
@@ -301,16 +302,15 @@ class Plot():
             file_path = os.path.join(folder_path, file_name)
             try:
                 df = uproot.open(f"{file_path}:tree").arrays(branch_names, library="pd")
-                clean_data = df.replace([np.inf, -np.inf], np.nan).dropna()
+                clean_data = df
                 num_data = clean_data[branch_names[0]]
-                if len(branch_names) == 1:
-                    deno_data = 1.0
-                else:
-                    deno_data = clean_data[branch_names[0]]
-                    for branch_name in branch_names[1:]:
-                        deno_data += clean_data[branch_name]
+                if len(branch_names) != 1:
+                    df_deno = sum([df[branch] for branch in branch_names])
+                    df_deno = df_deno.replace(0, np.nan)
+                else :
+                    df_deno = 1.0
                 save_output(f"Processing file {file_path} for branches {branch_names} with label {label}", ofile_path = self.history_out_path)
-                selected_data = num_data / deno_data
+                selected_data = num_data / df_deno
                 final_data = selected_data.replace([np.inf, -np.inf], np.nan).dropna()
                 if final_data.empty:
                     print(f"No valid data for branch {branch_names} in {label}")
@@ -358,13 +358,12 @@ class Plot():
                 df = uproot.open(f"{file_path}:tree").arrays(branch_names + ["T_event"], library="pd")
                 df = df.replace([np.inf, -np.inf], np.nan).dropna()
                 num = df[branch_names[0]]
-                if len(branch_names) > 1:
-                    den = df[branch_names[0]]
-                    for branch in branch_names[1:]:
-                        den += df[branch]
-                else:
-                    den = 1.0
-                score = (num / den).replace([np.inf, -np.inf], np.nan).dropna()
+                if len(branch_names) != 1:
+                    df_deno = sum([df[branch] for branch in branch_names])
+                    df_deno = df_deno.replace(0, np.nan)
+                else :
+                    df_deno = 1.0
+                score = (num / df_deno).replace([np.inf, -np.inf], np.nan).dropna()
                 df["score"] = score
                 df["label"] = label
 
@@ -580,6 +579,8 @@ class DNNModel():
         even_model_path = self.even_model_save_path 
         self.odd_classifier.save(odd_model_path)
         self.even_classifier.save(even_model_path)
+        print(f"Saved odd classifier model to {odd_model_path}")
+        print(f"Saved even classifier model to {even_model_path}")
         save_output(f"Saved odd classifier model to {odd_model_path}", ofile_path=self.log_path )
         save_output(f"Saved even classifier model to {even_model_path}", ofile_path=self.log_path )
     
@@ -619,17 +620,17 @@ class DNNModel():
         return True
     def analyze_overfitting(self , history, loss_threshold=0.1, acc_threshold=0.1 , is_even:bool = True,is_biclass:bool = True, is_bdt:bool = False):
         if is_biclass and is_bdt and is_even:
-            file_path = os.path.join(self.config['roc_curve_files']["folder_path"], self.config['roc_curve_files']["file_names_loss_acc_train_val"]["bdt_biclass_even_file_name"])
+            file_path = os.path.join(self.config['roc_curve_files']["save_folder_path"], self.config['roc_curve_files']["file_names_loss_acc_train_val"]["bdt_biclass_even_file_name"])
         elif is_biclass and is_bdt and not is_even:
-            file_path = os.path.join(self.config['roc_curve_files']["folder_path"], self.config['roc_curve_files']["file_names_loss_acc_train_val"]["bdt_biclass_odd_file_name"])
+            file_path = os.path.join(self.config['roc_curve_files']["save_folder_path"], self.config['roc_curve_files']["file_names_loss_acc_train_val"]["bdt_biclass_odd_file_name"])
         elif not is_biclass and not is_bdt and  is_even:
-            file_path = os.path.join(self.config['roc_curve_files']["folder_path"], self.config['roc_curve_files']["file_names_loss_acc_train_val"]["dnn_mclass_even_file_name"])
+            file_path = os.path.join(self.config['roc_curve_files']["save_folder_path"], self.config['roc_curve_files']["file_names_loss_acc_train_val"]["dnn_mclass_even_file_name"])
         elif not is_biclass and not is_bdt and not is_even:
-            file_path = os.path.join(self.config['roc_curve_files']["folder_path"], self.config['roc_curve_files']["file_names_loss_acc_train_val"]["dnn_mclass_odd_file_name"])
+            file_path = os.path.join(self.config['roc_curve_files']["save_folder_path"], self.config['roc_curve_files']["file_names_loss_acc_train_val"]["dnn_mclass_odd_file_name"])
         elif is_biclass and not is_bdt and is_even:
-            file_path = os.path.join(self.config['roc_curve_files']["folder_path"], self.config['roc_curve_files']["file_names_loss_acc_train_val"]["dnn_biclass_even_file_name"])
+            file_path = os.path.join(self.config['roc_curve_files']["save_folder_path"], self.config['roc_curve_files']["file_names_loss_acc_train_val"]["dnn_biclass_even_file_name"])
         elif is_biclass and not is_bdt and not is_even:
-            file_path = os.path.join(self.config['roc_curve_files']["folder_path"], self.config['roc_curve_files']["file_names_loss_acc_train_val"]["dnn_biclass_odd_file_name"])
+            file_path = os.path.join(self.config['roc_curve_files']["save_folder_path"], self.config['roc_curve_files']["file_names_loss_acc_train_val"]["dnn_biclass_odd_file_name"])
         else:
             raise ValueError("Invalid combination of is_biclass and is_bdt flags.")
         history_dict = history.history

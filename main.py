@@ -68,9 +68,11 @@ if args.results:
     plot_.plot_var_distribution(["DNN_BiClass"])
     plot_.plot_var_distribution(["DNN_VBF","DNN_QCD"])
     plot_.plot_var_distribution(["DNN_VBF","DNN_QCD","DNN_TT"])
-    plot_.plot_var_distribution(["DNN_QCD","DNN_VBF"])
-    plot_.plot_var_distribution(["DNN_Z2Q","DNN_QCD","DNN_TT"])
-    plot_.plot_var_distribution(["DNN_GGH","DNN_QCD","DNN_TT"])
+    # plot_.plot_var_distribution(["DNN_QCD","DNN_VBF"])
+    # plot_.plot_var_distribution(["DNN_Z2Q","DNN_QCD","DNN_TT"])
+    # plot_.plot_var_distribution(["DNN_GGH","DNN_QCD","DNN_TT"])
     plot_.plot_roc_curve(["DNN_BiClass"])
+    plot_.plot_roc_curve(["DNN_VBF","DNN_QCD"])
+    plot_.plot_roc_curve(["DNN_VBF","DNN_QCD","DNN_TT"])
     
 
