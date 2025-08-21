@@ -84,8 +84,8 @@ if args.results:
     file_path = os.path.join(config["prediction_files"]["folder_path"], "tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root")
     plot_.plot_tprofile(file_path ,"output_plot_models/tprofile_biclass_vbf.png", is_mclass = False ,is_data = False,nbins = 50,mbb_range=(110.0, 140.0),vbfbclass="DNN_BiClass",vbf_dnn = "DNN_VBF",qcd_dnn = "DNN_QCD")
     plot_.plot_tprofile(file_path ,"output_plot_models/tprofile_mclass_vbf.png", is_mclass = True ,is_data = False,nbins = 50,mbb_range=(110.0, 140.0),vbfbclass="DNN_BiClass",vbf_dnn = "DNN_VBF",qcd_dnn = "DNN_QCD")
+    plot_.plot_tprofile(file_path ,"output_plot_models/tprofile_biclass_vbf_qcd.png", is_mclass = False ,is_data = False,nbins = 50,mbb_range=(110.0, 140.0),vbfbclass="BiClassANN",vbf_dnn = "DNN_VBF",qcd_dnn = "DNN_QCD")
     file_path = os.path.join(config["prediction_files"]["folder_path"], "tree_JetMET_2022_btgsf.root")
     plot_.plot_tprofile(file_path ,"output_plot_models/tprofile_biclass_data.png", is_mclass = False ,is_data = True,nbins = 50,mbb_range=(110.0, 140.0),vbfbclass="DNN_BiClass",vbf_dnn = "DNN_VBF",qcd_dnn = "DNN_QCD")
     plot_.plot_tprofile(file_path ,"output_plot_models/tprofile_mclass_data.png", is_mclass = True ,is_data = True,nbins = 50,mbb_range=(110.0, 140.0),vbfbclass="DNN_BiClass",vbf_dnn = "DNN_VBF",qcd_dnn = "DNN_QCD")
-
-
+    plot_.plot_tprofile(file_path ,"output_plot_models/tprofile_biclass_vbf_qcd.png", is_mclass = False ,is_data = True,nbins = 50,mbb_range=(110.0, 140.0),vbfbclass="BiClassANN",vbf_dnn = "DNN_VBF",qcd_dnn = "DNN_QCD")
