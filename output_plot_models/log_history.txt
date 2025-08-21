@@ -1172,3 +1172,1072 @@ Saved ROC curve plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RE
 Processed file tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label 1
 Processed file tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label 0
 Saved ROC curve plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_DNN_TT_even_odd_roc_curve.png
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root to pandas DataFrame with shape (306542, 92)
+Resampled data to 500000 events with replacement=True
+Added label branch with value 0
+Available weight features : ['T_weight', 'T_PUweight', 'LUMI']
+Normalised weights with median scaling applied
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root to pandas DataFrame with shape (70487, 117)
+Resampled data to 500000 events with replacement=True
+Added label branch with value 1
+Available weight features : ['T_weight', 'T_HLTweight', 'T_PUweight', 'T_btag_weight_central', 'T_online_btag_weight', 'LUMI']
+Normalised weights with median scaling applied
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root to pandas DataFrame with shape (16781, 117)
+Resampled data to 500000 events with replacement=True
+Added label branch with value 2
+Available weight features : ['T_weight', 'T_HLTweight', 'T_PUweight', 'T_btag_weight_central', 'T_online_btag_weight', 'LUMI']
+Normalised weights with median scaling applied
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root to pandas DataFrame with shape (993409, 117)
+Resampled data to 500000 events with replacement=False
+Added label branch with value 3
+Available weight features : ['T_weight', 'T_HLTweight', 'T_PUweight', 'T_btag_weight_central', 'T_online_btag_weight', 'LUMI']
+Normalised weights with median scaling applied
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root to pandas DataFrame with shape (125501, 116)
+Resampled data to 500000 events with replacement=True
+Added label branch with value 4
+Available weight features : ['T_weight', 'T_HLTweight', 'T_PUweight', 'T_btag_weight_central', 'T_online_btag_weight', 'LUMI']
+Normalised weights with median scaling applied
+Replaced NaN and Inf values with zero
+Normalising mass with min: -529.194091796875, max: 5034.64013671875
+Processed data - Odd features shape: (1251846, 26), Even features shape: (1248154, 26)
+Input shape: 26, Number of classes: 5, Activation: softmax, Loss function: SparseCategoricalCrossentropy
+Compiled odd and even classifiers
+Prepared TensorFlow datasets for training
+Saved loss and accuracy plots to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/loss_acc_train_val_mclass_dnn_odd.png
+Saved loss and accuracy plots to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/loss_acc_train_val_mclass_dnn_even.png
+Training completed for both odd and even classifiers
+Saved odd classifier model to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/odd_mclass_dnn.keras
+Saved even classifier model to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/even_mclass_dnn.keras
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root to pandas DataFrame with shape (306542, 92)
+Resampled data to 300000 events with replacement=False
+Added label branch with value 0
+Available weight features : ['T_weight', 'T_PUweight', 'LUMI']
+Normalised weights with median scaling applied
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root to pandas DataFrame with shape (70487, 117)
+Resampled data to 300000 events with replacement=True
+Added label branch with value 1
+Available weight features : ['T_weight', 'T_HLTweight', 'T_PUweight', 'T_btag_weight_central', 'T_online_btag_weight', 'LUMI']
+Normalised weights with median scaling applied
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root to pandas DataFrame with shape (16781, 117)
+Resampled data to 300000 events with replacement=True
+Added label branch with value 2
+Available weight features : ['T_weight', 'T_HLTweight', 'T_PUweight', 'T_btag_weight_central', 'T_online_btag_weight', 'LUMI']
+Normalised weights with median scaling applied
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root to pandas DataFrame with shape (993409, 117)
+Resampled data to 300000 events with replacement=False
+Added label branch with value 3
+Available weight features : ['T_weight', 'T_HLTweight', 'T_PUweight', 'T_btag_weight_central', 'T_online_btag_weight', 'LUMI']
+Normalised weights with median scaling applied
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root to pandas DataFrame with shape (125501, 116)
+Resampled data to 300000 events with replacement=True
+Added label branch with value 4
+Available weight features : ['T_weight', 'T_HLTweight', 'T_PUweight', 'T_btag_weight_central', 'T_online_btag_weight', 'LUMI']
+Normalised weights with median scaling applied
+Replaced NaN and Inf values with zero
+Normalising mass with min: -275.114501953125, max: 5034.64013671875
+Processed data - Odd features shape: (751047, 26), Even features shape: (748953, 26)
+Input shape: 26, Number of classes: 5, Activation: softmax, Loss function: SparseCategoricalCrossentropy
+Compiled odd and even classifiers
+Prepared TensorFlow datasets for training
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_BiClass'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_BiClass'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_BiClass_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_VBF', 'DNN_QCD'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_DNN_TT_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_QCD', 'DNN_VBF'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_QCD_DNN_VBF_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_GGH', 'DNN_QCD'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_QCD'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_QCD'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_QCD'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_GGH', 'DNN_QCD'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_QCD'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_GGH_DNN_QCD_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_GGH', 'DNN_VBF'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_GGH_DNN_VBF_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_Z2Q_DNN_QCD_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_Z2Q_DNN_VBF_distribution.png
+Processed file tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label 1
+Processed file tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label 0
+Saved ROC curve plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_BiClass_even_odd_roc_curve.png
+Processed file tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label 1
+Processed file tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label 0
+Saved ROC curve plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_even_odd_roc_curve.png
+Processed file tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label 1
+Processed file tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label 0
+Saved ROC curve plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_DNN_TT_even_odd_roc_curve.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_BiClass'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_BiClass'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_BiClass_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_VBF', 'DNN_QCD'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_DNN_TT_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_QCD', 'DNN_VBF'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_QCD_DNN_VBF_distribution.png
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_GGH_DNN_QCD_ DNN_VBF_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_GGH', 'DNN_VBF'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_GGH_DNN_VBF_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_Z2Q_DNN_QCD_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_Z2Q_DNN_VBF_distribution.png
+Processed file tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label 1
+Processed file tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label 0
+Saved ROC curve plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_BiClass_even_odd_roc_curve.png
+Processed file tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label 1
+Processed file tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label 0
+Saved ROC curve plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_even_odd_roc_curve.png
+Processed file tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label 1
+Processed file tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label 0
+Saved ROC curve plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_DNN_TT_even_odd_roc_curve.png
+Saved loss and accuracy plots to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/loss_acc_train_val_mclass_dnn_odd.png
+Saved loss and accuracy plots to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/loss_acc_train_val_mclass_dnn_even.png
+Training completed for both odd and even classifiers
+Saved odd classifier model to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/odd_mclass_dnn.keras
+Saved even classifier model to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/even_mclass_dnn.keras
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_BiClass'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_BiClass'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_BiClass_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_VBF', 'DNN_QCD'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_DNN_TT_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_QCD', 'DNN_VBF'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_QCD_DNN_VBF_distribution.png
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_GGH_DNN_QCD_ DNN_VBF_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_GGH', 'DNN_VBF'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_GGH_DNN_VBF_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_Z2Q_DNN_QCD_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_Z2Q_DNN_VBF_distribution.png
+Processed file tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label 1
+Processed file tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label 0
+Saved ROC curve plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_BiClass_even_odd_roc_curve.png
+Processed file tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label 1
+Processed file tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label 0
+Saved ROC curve plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_even_odd_roc_curve.png
+Processed file tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label 1
+Processed file tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label 0
+Saved ROC curve plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_DNN_TT_even_odd_roc_curve.png
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root to pandas DataFrame with shape (306542, 92)
+Resampled data to 300000 events with replacement=False
+Added label branch with value 0
+Available weight features : ['T_weight', 'T_PUweight', 'LUMI']
+Normalised weights with median scaling applied
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root to pandas DataFrame with shape (70487, 117)
+Resampled data to 300000 events with replacement=True
+Added label branch with value 1
+Available weight features : ['T_weight', 'T_HLTweight', 'T_PUweight', 'T_btag_weight_central', 'T_online_btag_weight', 'LUMI']
+Normalised weights with median scaling applied
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root to pandas DataFrame with shape (16781, 117)
+Resampled data to 300000 events with replacement=True
+Added label branch with value 2
+Available weight features : ['T_weight', 'T_HLTweight', 'T_PUweight', 'T_btag_weight_central', 'T_online_btag_weight', 'LUMI']
+Normalised weights with median scaling applied
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root to pandas DataFrame with shape (993409, 117)
+Resampled data to 300000 events with replacement=False
+Added label branch with value 3
+Available weight features : ['T_weight', 'T_HLTweight', 'T_PUweight', 'T_btag_weight_central', 'T_online_btag_weight', 'LUMI']
+Normalised weights with median scaling applied
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root to pandas DataFrame with shape (125501, 116)
+Resampled data to 300000 events with replacement=True
+Added label branch with value 4
+Available weight features : ['T_weight', 'T_HLTweight', 'T_PUweight', 'T_btag_weight_central', 'T_online_btag_weight', 'LUMI']
+Normalised weights with median scaling applied
+Replaced NaN and Inf values with zero
+Normalising mass with min: -275.114501953125, max: 5034.64013671875
+Processed data - Odd features shape: (751047, 26), Even features shape: (748953, 26)
+Input shape: 26, Number of classes: 5, Activation: softmax, Loss function: SparseCategoricalCrossentropy
+Compiled odd and even classifiers
+Prepared TensorFlow datasets for training
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_BiClass'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_BiClass'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_BiClass_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_VBF', 'DNN_QCD'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_DNN_TT_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_QCD', 'DNN_VBF'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_QCD_DNN_VBF_distribution.png
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_GGH_DNN_QCD_ DNN_VBF_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_GGH', 'DNN_VBF'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_GGH_DNN_VBF_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_Z2Q_DNN_QCD_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_Z2Q_DNN_VBF_distribution.png
+Processed file tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label 1
+Processed file tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label 0
+Saved ROC curve plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_BiClass_even_odd_roc_curve.png
+Processed file tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label 1
+Processed file tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label 0
+Saved ROC curve plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_even_odd_roc_curve.png
+Processed file tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label 1
+Processed file tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label 0
+Saved ROC curve plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_DNN_TT_even_odd_roc_curve.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_BiClass'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_BiClass'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_BiClass_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_VBF', 'DNN_QCD'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_DNN_TT_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_QCD', 'DNN_VBF'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_QCD_DNN_VBF_distribution.png
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_GGH_DNN_QCD_ DNN_VBF_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_GGH', 'DNN_VBF'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_GGH_DNN_VBF_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_Z2Q_DNN_QCD_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_Z2Q_DNN_VBF_distribution.png
+Processed file tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label 1
+Processed file tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label 0
+Saved ROC curve plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_BiClass_even_odd_roc_curve.png
+Processed file tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label 1
+Processed file tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label 0
+Saved ROC curve plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_even_odd_roc_curve.png
+Processed file tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label 1
+Processed file tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label 0
+Saved ROC curve plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_DNN_TT_even_odd_roc_curve.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_BiClass'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_BiClass'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_BiClass_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_VBF', 'DNN_QCD'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_DNN_TT_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_QCD', 'DNN_VBF'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_QCD_DNN_VBF_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_GGH', 'DNN_VBF'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_GGH_DNN_VBF_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_Z2Q_DNN_QCD_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_Z2Q_DNN_VBF_distribution.png
+Processed file tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label 1
+Processed file tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label 0
+Saved ROC curve plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_BiClass_even_odd_roc_curve.png
+Processed file tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label 1
+Processed file tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label 0
+Saved ROC curve plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_even_odd_roc_curve.png
+Processed file tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label 1
+Processed file tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label 0
+Saved ROC curve plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_DNN_TT_even_odd_roc_curve.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_BiClass'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_BiClass'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_BiClass_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_VBF', 'DNN_QCD'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_DNN_TT_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_VBF', 'DNN_GGH', 'DNN_QCD'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_GGH', 'DNN_QCD'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_GGH', 'DNN_QCD'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_GGH', 'DNN_QCD'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_VBF', 'DNN_GGH', 'DNN_QCD'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_GGH', 'DNN_QCD'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_GGH_DNN_QCD_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_QCD', 'DNN_VBF'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_QCD_DNN_VBF_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_GGH', 'DNN_VBF'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_GGH_DNN_VBF_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_Z2Q_DNN_QCD_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_Z2Q_DNN_VBF_distribution.png
+Processed file tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label 1
+Processed file tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label 0
+Saved ROC curve plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_BiClass_even_odd_roc_curve.png
+Processed file tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label 1
+Processed file tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label 0
+Saved ROC curve plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_even_odd_roc_curve.png
+Processed file tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label 1
+Processed file tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label 0
+Saved ROC curve plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_DNN_TT_even_odd_roc_curve.png
+Saved loss and accuracy plots to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/loss_acc_train_val_mclass_dnn_odd.png
+Saved loss and accuracy plots to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/loss_acc_train_val_mclass_dnn_even.png
+Training completed for both odd and even classifiers
+Saved odd classifier model to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/odd_mclass_dnn.keras
+Saved even classifier model to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/even_mclass_dnn.keras
+Input shape: 26, Number of classes: 5, Activation: softmax, Loss function: SparseCategoricalCrossentropy
+Processing files for predictions : ['/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root']
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf.root to pandas DataFrame with shape (6130833, 92)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf.root - Odd features shape: (3067068, 26), Even features shape: (3063765, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root to pandas DataFrame with shape (306542, 92)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root - Odd features shape: (153276, 26), Even features shape: (153266, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root to pandas DataFrame with shape (70487, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root - Odd features shape: (35464, 26), Even features shape: (35023, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root to pandas DataFrame with shape (16781, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root - Odd features shape: (8415, 26), Even features shape: (8366, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root to pandas DataFrame with shape (993409, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root - Odd features shape: (496066, 26), Even features shape: (497343, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root to pandas DataFrame with shape (125501, 116)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root - Odd features shape: (62638, 26), Even features shape: (62863, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root to pandas DataFrame with shape (1414020, 116)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root - Odd features shape: (707316, 26), Even features shape: (706704, 26)
+Loaded odd classifier model from /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/odd_mclass_dnn.keras
+Loaded even classifier model from /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/even_mclass_dnn.keras
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_BiClass'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_BiClass'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_BiClass_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_VBF', 'DNN_QCD'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_DNN_TT_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_VBF', 'DNN_GGH', 'DNN_QCD'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_GGH', 'DNN_QCD'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_GGH', 'DNN_QCD'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_GGH', 'DNN_QCD'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_VBF', 'DNN_GGH', 'DNN_QCD'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_GGH', 'DNN_QCD'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_GGH_DNN_QCD_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_QCD', 'DNN_VBF'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_QCD_DNN_VBF_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_GGH', 'DNN_VBF'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_GGH_DNN_VBF_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_Z2Q_DNN_QCD_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_Z2Q_DNN_VBF_distribution.png
+Processed file tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label 1
+Processed file tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label 0
+Saved ROC curve plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_BiClass_even_odd_roc_curve.png
+Processed file tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label 1
+Processed file tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label 0
+Saved ROC curve plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_even_odd_roc_curve.png
+Processed file tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label 1
+Processed file tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label 0
+Saved ROC curve plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_DNN_TT_even_odd_roc_curve.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_BiClass'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_BiClass'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_BiClass_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_VBF', 'DNN_QCD'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_DNN_TT_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_VBF', 'DNN_GGH', 'DNN_QCD'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_GGH', 'DNN_QCD'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_GGH', 'DNN_QCD'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_GGH', 'DNN_QCD'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_VBF', 'DNN_GGH', 'DNN_QCD'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_GGH', 'DNN_QCD'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_GGH_DNN_QCD_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_QCD', 'DNN_VBF'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_QCD_DNN_VBF_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_GGH', 'DNN_VBF'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_GGH_DNN_VBF_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_Z2Q_DNN_QCD_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_Z2Q_DNN_VBF_distribution.png
+Processed file tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label 1
+Processed file tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label 0
+Saved ROC curve plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_BiClass_even_odd_roc_curve.png
+Processed file tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label 1
+Processed file tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label 0
+Saved ROC curve plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_even_odd_roc_curve.png
+Processed file tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label 1
+Processed file tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label 0
+Saved ROC curve plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_DNN_TT_even_odd_roc_curve.png
+Plotting TProfile from file: /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root, is_mclass = True , vbfbclass=BiClassANN,vbf_dnn = DNN_VBF,qcd_dnn = DNN_QCD 
+Correlation coefficient: -0.012752206350648419
+Saved TProfile plot to output_plot_models/tprofile_vbf_qcd
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_BiClass'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_BiClass'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_BiClass_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_VBF', 'DNN_QCD'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_DNN_TT_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_VBF', 'DNN_GGH', 'DNN_QCD'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_GGH', 'DNN_QCD'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_GGH', 'DNN_QCD'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_GGH', 'DNN_QCD'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_VBF', 'DNN_GGH', 'DNN_QCD'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_GGH', 'DNN_QCD'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_GGH_DNN_QCD_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_QCD', 'DNN_VBF'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_QCD_DNN_VBF_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_GGH', 'DNN_VBF'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_GGH_DNN_VBF_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_Z2Q_DNN_QCD_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_Z2Q_DNN_VBF_distribution.png
+Processed file tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label 1
+Processed file tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label 0
+Saved ROC curve plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_BiClass_even_odd_roc_curve.png
+Processed file tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label 1
+Processed file tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label 0
+Saved ROC curve plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_even_odd_roc_curve.png
+Processed file tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label 1
+Processed file tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label 0
+Saved ROC curve plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_DNN_TT_even_odd_roc_curve.png
+Plotting TProfile from file: /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root, is_mclass = True , vbfbclass=BiClassANN,vbf_dnn = DNN_VBF,qcd_dnn = DNN_QCD 
+Correlation coefficient: -0.012752206350648419
+Saved TProfile plot to output_plot_models/tprofile_vbf_qcd.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_BiClass'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_BiClass'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_BiClass_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_VBF', 'DNN_QCD'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_DNN_TT_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_VBF', 'DNN_GGH', 'DNN_QCD'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_GGH', 'DNN_QCD'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_GGH', 'DNN_QCD'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_GGH', 'DNN_QCD'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_VBF', 'DNN_GGH', 'DNN_QCD'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_GGH', 'DNN_QCD'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_GGH_DNN_QCD_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_QCD', 'DNN_VBF'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_QCD_DNN_VBF_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_GGH', 'DNN_VBF'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_GGH_DNN_VBF_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_Z2Q_DNN_QCD_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_Z2Q_DNN_VBF_distribution.png
+Processed file tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label 1
+Processed file tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label 0
+Saved ROC curve plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_BiClass_even_odd_roc_curve.png
+Processed file tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label 1
+Processed file tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label 0
+Saved ROC curve plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_even_odd_roc_curve.png
+Processed file tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label 1
+Processed file tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label 0
+Saved ROC curve plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_DNN_TT_even_odd_roc_curve.png
+Plotting TProfile from file: /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root, is_mclass = True , vbfbclass=BiClassANN,vbf_dnn = DNN_VBF,qcd_dnn = DNN_QCD 
+Correlation coefficient: -0.012752206350648419
+Saved TProfile plot to output_plot_models/tprofile_vbf_qcd.png
+Plotting TProfile from file: /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root, is_mclass = False , vbfbclass=DNN_BiClass,vbf_dnn = DNN_VBF,qcd_dnn = DNN_QCD 
+Correlation coefficient: -0.00021144527013780112
+Saved TProfile plot to output_plot_models/tprofile_biclass_vbf.png
+Plotting TProfile from file: /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root, is_mclass = True , vbfbclass=DNN_BiClass,vbf_dnn = DNN_VBF,qcd_dnn = DNN_QCD 
+Correlation coefficient: -0.011765347312256128
+Saved TProfile plot to output_plot_models/tprofile_mclass_vbf.png
+Plotting TProfile from file: /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf.root, is_mclass = False , vbfbclass=DNN_BiClass,vbf_dnn = DNN_VBF,qcd_dnn = DNN_QCD 
+Correlation coefficient: -0.04330237421698917
+Saved TProfile plot to output_plot_models/tprofile_biclass_data.png
+Plotting TProfile from file: /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf.root, is_mclass = True , vbfbclass=DNN_BiClass,vbf_dnn = DNN_VBF,qcd_dnn = DNN_QCD 
+Correlation coefficient: -0.03634815677583359
+Saved TProfile plot to output_plot_models/tprofile_mclass_data.png
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root to pandas DataFrame with shape (306542, 92)
+Resampled data to 300000 events with replacement=False
+Added label branch with value 0
+Available weight features : ['T_weight', 'T_PUweight', 'LUMI']
+Normalised weights with median scaling applied
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root to pandas DataFrame with shape (306542, 92)
+Resampled data to 300000 events with replacement=False
+Added label branch with value 0
+Available weight features : ['T_weight', 'T_PUweight', 'LUMI']
+Normalised weights with median scaling applied
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root to pandas DataFrame with shape (70487, 117)
+Resampled data to 300000 events with replacement=True
+Added label branch with value 1
+Available weight features : ['T_weight', 'T_HLTweight', 'T_PUweight', 'T_btag_weight_central', 'T_online_btag_weight', 'LUMI']
+Normalised weights with median scaling applied
+Replaced NaN and Inf values with zero
+Normalising mass with min: 20.207927703857422, max: 4305.78955078125
+Processed data - Odd features shape: (300838, 19), Even features shape: (299162, 19)
+Input shape: 19, Number of classes: 1, Activation: sigmoid, Loss function: binary_crossentropy
+Compiled odd and even classifiers
+Prepared TensorFlow datasets for training
+Saved loss and accuracy plots to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/loss_acc_train_val_biclass_dnn_odd.png
+Saved loss and accuracy plots to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/loss_acc_train_val_biclass_dnn_even.png
+Training completed for both odd and even classifiers
+Saved odd classifier model to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/odd_biclass_dnn.keras
+Saved even classifier model to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/even_biclass_dnn.keras
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root to pandas DataFrame with shape (306542, 92)
+Resampled data to 300000 events with replacement=False
+Added label branch with value 0
+Available weight features : ['T_weight', 'T_PUweight', 'LUMI']
+Normalised weights with median scaling applied
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root to pandas DataFrame with shape (70487, 117)
+Resampled data to 300000 events with replacement=True
+Added label branch with value 1
+Available weight features : ['T_weight', 'T_HLTweight', 'T_PUweight', 'T_btag_weight_central', 'T_online_btag_weight', 'LUMI']
+Normalised weights with median scaling applied
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root to pandas DataFrame with shape (16781, 117)
+Resampled data to 300000 events with replacement=True
+Added label branch with value 2
+Available weight features : ['T_weight', 'T_HLTweight', 'T_PUweight', 'T_btag_weight_central', 'T_online_btag_weight', 'LUMI']
+Normalised weights with median scaling applied
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root to pandas DataFrame with shape (993409, 117)
+Resampled data to 300000 events with replacement=False
+Added label branch with value 3
+Available weight features : ['T_weight', 'T_HLTweight', 'T_PUweight', 'T_btag_weight_central', 'T_online_btag_weight', 'LUMI']
+Normalised weights with median scaling applied
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root to pandas DataFrame with shape (125501, 116)
+Resampled data to 300000 events with replacement=True
+Added label branch with value 4
+Available weight features : ['T_weight', 'T_HLTweight', 'T_PUweight', 'T_btag_weight_central', 'T_online_btag_weight', 'LUMI']
+Normalised weights with median scaling applied
+Replaced NaN and Inf values with zero
+Normalising mass with min: -275.114501953125, max: 5034.64013671875
+Processed data - Odd features shape: (751047, 19), Even features shape: (748953, 19)
+Input shape: 19, Number of classes: 5, Activation: softmax, Loss function: SparseCategoricalCrossentropy
+Compiled odd and even classifiers
+Prepared TensorFlow datasets for training
+Saved loss and accuracy plots to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/loss_acc_train_val_mclass_dnn_odd.png
+Saved loss and accuracy plots to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/loss_acc_train_val_mclass_dnn_even.png
+Training completed for both odd and even classifiers
+Saved odd classifier model to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/odd_mclass_dnn.keras
+Saved even classifier model to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/even_mclass_dnn.keras
+Input shape: 19, Number of classes: 5, Activation: softmax, Loss function: SparseCategoricalCrossentropy
+Processing files for predictions : ['/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root']
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf.root to pandas DataFrame with shape (6130833, 92)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf.root - Odd features shape: (3067068, 19), Even features shape: (3063765, 19)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root to pandas DataFrame with shape (306542, 92)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root - Odd features shape: (153276, 19), Even features shape: (153266, 19)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root to pandas DataFrame with shape (70487, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root - Odd features shape: (35464, 19), Even features shape: (35023, 19)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root to pandas DataFrame with shape (16781, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root - Odd features shape: (8415, 19), Even features shape: (8366, 19)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root to pandas DataFrame with shape (993409, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root - Odd features shape: (496066, 19), Even features shape: (497343, 19)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root to pandas DataFrame with shape (125501, 116)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root - Odd features shape: (62638, 19), Even features shape: (62863, 19)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root to pandas DataFrame with shape (1414020, 116)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root - Odd features shape: (707316, 19), Even features shape: (706704, 19)
+Loaded odd classifier model from /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/odd_mclass_dnn.keras
+Loaded even classifier model from /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/even_mclass_dnn.keras
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root
+Input shape: 19, Number of classes: 1, Activation: sigmoid, Loss function: binary_crossentropy
+Processing files for predictions : ['/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root']
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf.root to pandas DataFrame with shape (6130833, 92)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf.root - Odd features shape: (3067068, 19), Even features shape: (3063765, 19)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root to pandas DataFrame with shape (306542, 92)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root - Odd features shape: (153276, 19), Even features shape: (153266, 19)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root to pandas DataFrame with shape (70487, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root - Odd features shape: (35464, 19), Even features shape: (35023, 19)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root to pandas DataFrame with shape (16781, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root - Odd features shape: (8415, 19), Even features shape: (8366, 19)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root to pandas DataFrame with shape (993409, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root - Odd features shape: (496066, 19), Even features shape: (497343, 19)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root to pandas DataFrame with shape (125501, 116)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root - Odd features shape: (62638, 19), Even features shape: (62863, 19)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root to pandas DataFrame with shape (1414020, 116)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root - Odd features shape: (707316, 19), Even features shape: (706704, 19)
+Loaded odd classifier model from /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/odd_biclass_dnn.keras
+Loaded even classifier model from /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/even_biclass_dnn.keras
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_BiClass'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_BiClass'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_BiClass_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_VBF', 'DNN_QCD'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_DNN_TT_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_VBF', 'DNN_GGH', 'DNN_QCD'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_GGH', 'DNN_QCD'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_GGH', 'DNN_QCD'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_GGH', 'DNN_QCD'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_VBF', 'DNN_GGH', 'DNN_QCD'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_GGH', 'DNN_QCD'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_GGH_DNN_QCD_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_QCD', 'DNN_VBF'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_QCD', 'DNN_VBF'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_QCD_DNN_VBF_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_GGH', 'DNN_VBF'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_GGH', 'DNN_VBF'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_GGH_DNN_VBF_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_QCD'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_Z2Q_DNN_QCD_distribution.png
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label JetMET 2022 5%
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label VBFHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label GluGluHto2B M-125
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label TTto4Q
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label Zto2Q-4Jets HT
+Processing file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_Z2Q', 'DNN_VBF'] with label QCD-4Jets HT
+Saved variable distribution plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_Z2Q_DNN_VBF_distribution.png
+Processed file tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label 1
+Processed file tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label 0
+Saved ROC curve plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_BiClass_even_odd_roc_curve.png
+Processed file tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label 1
+Processed file tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label 0
+Saved ROC curve plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_even_odd_roc_curve.png
+Processed file tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label 1
+Processed file tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label 0
+Saved ROC curve plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_DNN_TT_even_odd_roc_curve.png
+Plotting TProfile from file: /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root, is_mclass = False , vbfbclass=DNN_BiClass,vbf_dnn = DNN_VBF,qcd_dnn = DNN_QCD 
+Correlation coefficient: -0.01224843279865815
+Saved TProfile plot to output_plot_models/tprofile_biclass_vbf.png
+Plotting TProfile from file: /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root, is_mclass = True , vbfbclass=DNN_BiClass,vbf_dnn = DNN_VBF,qcd_dnn = DNN_QCD 
+Correlation coefficient: -0.01360577461465734
+Saved TProfile plot to output_plot_models/tprofile_mclass_vbf.png
+Plotting TProfile from file: /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf.root, is_mclass = False , vbfbclass=DNN_BiClass,vbf_dnn = DNN_VBF,qcd_dnn = DNN_QCD 
+Correlation coefficient: -0.028514051959556547
+Saved TProfile plot to output_plot_models/tprofile_biclass_data.png
+Plotting TProfile from file: /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf.root, is_mclass = True , vbfbclass=DNN_BiClass,vbf_dnn = DNN_VBF,qcd_dnn = DNN_QCD 
+Correlation coefficient: -0.028050266553418468
+Saved TProfile plot to output_plot_models/tprofile_mclass_data.png

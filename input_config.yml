@@ -29,10 +29,10 @@ event_branch : T_event
 #    T_phiA_bb_qq, T_alphaqq,T_HTT_rest_30,T_NJ_30,T_pzAll,T_btgb1, T_btgb2,T_dETAqq, T_dPHIqq
 # ]
 train_features: [
-  T_qglq1, T_qglq2, T_ptq1, T_ptq2, T_phiq1, T_phiq2,  T_etaq1, T_etaq2,
-  T_NJ_30, T_alphaqq, T_mqq, T_dETAqq, T_dPHIqq, T_btgb1, T_btgb2, T_HTT_rest_30,
-  T_enq1, T_enq2, T_zep, T_phiA_bb_qq, T_dR_leadqH, T_norm_pt, T_dR_subleadqH,
-  T_pzAll, era, T_minR
+  T_qglq1, T_qglq2, T_ptq1,  T_phiq1, T_phiq2,  T_etaq1, T_etaq2,
+  T_NJ_30, T_alphaqq, T_mqq, T_dETAqq, T_dPHIqq, T_btgb1, T_btgb2, 
+  T_enq1,  T_phiA_bb_qq, T_dR_leadqH,  T_pzAll,
+   era
 ]
 
 weight_features:

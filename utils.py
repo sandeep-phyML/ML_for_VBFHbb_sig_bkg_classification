@@ -23,7 +23,7 @@ import array
 from tensorflow.keras.layers import Layer
 import yaml
 def save_output(out_data , ofile_path: str = "model_summary.txt"):
-    print(out_data)
+    # print(out_data)
     with open(ofile_path, "a") as f:
         f.write(out_data + "\n")
 
@@ -216,6 +216,8 @@ class Plot():
         T_HLTweight = array.array('f', [0.])
         T_PUweight = array.array('f', [0.])
         LUMI = array.array('f', [0.])
+        T_btag_weight_central = array.array('f', [0.])
+        T_online_btag_weight = array.array('f', [0.])
         # Set branch addresses
         if is_mclass:
             tree.SetBranchAddress(vbf_dnn, dnn_vbfb)
@@ -228,6 +230,8 @@ class Plot():
             tree.SetBranchAddress("T_HLTweight", T_HLTweight)
             tree.SetBranchAddress("T_PUweight", T_PUweight)
             tree.SetBranchAddress("LUMI", LUMI)
+            tree.SetBranchAddress("T_btag_weight_central", T_btag_weight_central)
+            tree.SetBranchAddress("T_online_btag_weight", T_online_btag_weight)
         # Create TProfile and 2D histogram
         profile = ROOT.TProfile("profile", "TProfile of Higgs Reco Mass vs DNN Score;DNN Score;Higgs Reco Mass [GeV]",
                                 nbins, edges)
@@ -245,7 +249,7 @@ class Plot():
             y = higgs_reco_mass1[0]
             weight = 1.0
             if not is_data:
-                weight = T_weight[0] * T_HLTweight[0] * T_PUweight[0] * LUMI[0]
+                weight = T_weight[0] *  LUMI[0] * T_HLTweight[0] * T_PUweight[0] * T_btag_weight_central[0] * T_online_btag_weight[0]
             h.Fill(x, y, weight)
             profile.Fill(x, y, weight)
         print("Correlation coefficient:", h.GetCorrelationFactor())
@@ -285,7 +289,7 @@ class Plot():
         latex.Draw("same")
 
         # Save plot
-        c1.SaveAs(save_path)
+        c1.SaveAs(save_path.replace(".png", f"{h.GetCorrelationFactor()}.png"))
         save_output(f"Saved TProfile plot to {save_path}",ofile_path = self.history_out_path)
 
         # Cleanup
