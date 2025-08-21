@@ -399,7 +399,7 @@ class Plot():
         plt.plot([0, 1], [0, 1], "k--", label="Random Guess")
         plt.xlabel("False Positive Rate")
         plt.ylabel("True Positive Rate")
-        plt.title("ROC Curve (Even vs Odd Events)")
+        plt.title(f"ROC Curve (Even vs Odd Events) for var {'_'.join(branch_names)}")
         plt.legend()
         plt.grid(True)
         plt.tight_layout()

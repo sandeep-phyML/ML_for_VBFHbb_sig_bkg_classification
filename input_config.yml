@@ -43,6 +43,8 @@ weight_features:
   - T_online_btag_weight
   - LUMI
 
+
+
 train_mclass_files_labels:
   folder_path : /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/
   file_names_labels:
@@ -83,7 +85,25 @@ prediction_files:
     - tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root
     - tree_Zto2Q-4Jets_2022_btgsf.root
     - tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root
-   
+    - tree_Zto2Q-4Jets_2022_btgsf_JECUp.root
+    - tree_Zto2Q-4Jets_2022_btgsf_JECDown.root
+    - tree_Zto2Q-4Jets_2022_btgsf_JERUp.root
+    - tree_Zto2Q-4Jets_2022_btgsf_JERDown.root
+    - tree_Zto2Q-4Jets_2022_btgsf_PNetJECUp.root
+    - tree_Zto2Q-4Jets_2022_btgsf_PNetJECDown.root
+    - tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_JECUp.root
+    - tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_JECDown.root
+    - tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_JERUp.root
+    - tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_JERDown.root
+    - tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_PNetJECUp.root
+    - tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_PNetJECDown.root
+    - tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_JECUp.root
+    - tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_JECDown.root
+    - tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_JERUp.root
+    - tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_JERDown.root
+    - tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_PNetJECUp.root
+    - tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_PNetJECDown.root
+    
   
 output_plot_models:
   folder_path : /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/

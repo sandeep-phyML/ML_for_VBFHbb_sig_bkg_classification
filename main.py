@@ -66,6 +66,7 @@ if args.predict:
 if args.results:
     plot_ = Plot(config, log_path)
     plot_.plot_var_distribution(["DNN_BiClass"])
+    plot_.plot_var_distribution(["BiClassANN"])
     plot_.plot_var_distribution(["DNN_VBF","DNN_QCD"])
     plot_.plot_var_distribution(["DNN_VBF","DNN_QCD","DNN_TT"])
     plot_.plot_var_distribution(["DNN_VBF","DNN_GGH","DNN_QCD"])
@@ -77,6 +78,7 @@ if args.results:
     # plot_.plot_var_distribution(["DNN_Z2Q","DNN_QCD","DNN_TT"])
     # plot_.plot_var_distribution(["DNN_GGH","DNN_QCD","DNN_TT"])
     plot_.plot_roc_curve(["DNN_BiClass"])
+    plot_.plot_roc_curve(["BiClassANN"])
     plot_.plot_roc_curve(["DNN_VBF","DNN_QCD"])
     plot_.plot_roc_curve(["DNN_VBF","DNN_QCD","DNN_TT"])
     file_path = os.path.join(config["prediction_files"]["folder_path"], "tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root")
