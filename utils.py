@@ -94,6 +94,7 @@ class PrepareDataset():
             file_path = os.path.join(self.train_folder_path, item["file_name"])
             label_value = item["label"]
             pd_data_ = self.convert_tree_to_pd(file_path)
+            pd_data_ = self.add_event_filter(pd_data_, self.config["event_branches"] , self.config["cuts"])
             if self.is_resample_all:
                 pd_data_ = self.resample_events(pd_data_)
             pd_data_ = self.add_label_branch(pd_data_, label = label_value)
@@ -173,9 +174,9 @@ class PrepareDataset():
         with uproot.recreate(input_file) as f:
             f["tree"] = pd_data_
             return True
-    def add_event_filter(self,data: pd.DataFrame, event_branchs , cuts) -> pd.DataFrame:
+    def add_event_filter(self,data: pd.DataFrame, event_branches , cuts) -> pd.DataFrame:
         # here cuts are applied and ,
-        for index , branch in enumerate(event_branchs):
+        for index , branch in enumerate(event_branches):
             print(f"Applying cut on branch {branch} with value {cuts[index]}")
             data = data[data[branch]>=cuts[index]]
             print(f"Data shape after cut on {branch}: {data.shape}")
