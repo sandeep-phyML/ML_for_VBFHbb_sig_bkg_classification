@@ -1,0 +1,519 @@
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root to pandas DataFrame with shape (306542, 92)
+Applying event filters on branches ['T_btgb1', 'T_btgb2', 'T_mqq', 'T_dETAqq'] with cuts [0.2605, 0.2605, 500, 3.5] , before cuts the shape is (306542, 92)
+After cuts the shape is (56625, 92)
+Resampled data to 300000 events with replacement=True
+Added label branch with value 0
+Available weight features : ['T_weight', 'T_PUweight', 'LUMI']
+Normalised weights with median scaling applied
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root with shape (300000, 30) , label 0
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root to pandas DataFrame with shape (70487, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2', 'T_mqq', 'T_dETAqq'] with cuts [0.2605, 0.2605, 500, 3.5] , before cuts the shape is (70487, 117)
+After cuts the shape is (44479, 117)
+Resampled data to 300000 events with replacement=True
+Added label branch with value 1
+Available weight features : ['T_weight', 'T_HLTweight', 'T_PUweight', 'T_btag_weight_central', 'T_online_btag_weight', 'LUMI']
+Normalised weights with median scaling applied
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root with shape (300000, 30) , label 1
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root to pandas DataFrame with shape (16781, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2', 'T_mqq', 'T_dETAqq'] with cuts [0.2605, 0.2605, 500, 3.5] , before cuts the shape is (16781, 117)
+After cuts the shape is (4808, 117)
+Resampled data to 300000 events with replacement=True
+Added label branch with value 2
+Available weight features : ['T_weight', 'T_HLTweight', 'T_PUweight', 'T_btag_weight_central', 'T_online_btag_weight', 'LUMI']
+Normalised weights with median scaling applied
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root with shape (300000, 30) , label 2
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root to pandas DataFrame with shape (993409, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2', 'T_mqq', 'T_dETAqq'] with cuts [0.2605, 0.2605, 500, 3.5] , before cuts the shape is (993409, 117)
+After cuts the shape is (138133, 117)
+Resampled data to 300000 events with replacement=True
+Added label branch with value 3
+Available weight features : ['T_weight', 'T_HLTweight', 'T_PUweight', 'T_btag_weight_central', 'T_online_btag_weight', 'LUMI']
+Normalised weights with median scaling applied
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root with shape (300000, 30) , label 3
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root to pandas DataFrame with shape (125501, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2', 'T_mqq', 'T_dETAqq'] with cuts [0.2605, 0.2605, 500, 3.5] , before cuts the shape is (125501, 117)
+After cuts the shape is (18959, 117)
+Resampled data to 300000 events with replacement=True
+Added label branch with value 4
+Available weight features : ['T_weight', 'T_HLTweight', 'T_PUweight', 'T_btag_weight_central', 'T_online_btag_weight', 'LUMI']
+Normalised weights with median scaling applied
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root with shape (300000, 30) , label 4
+Replaced NaN and Inf values with zero
+Processed data - Odd features shape: (751045, 26), Even features shape: (748955, 26)
+Input shape: 26, Number of classes: 5, Activation: softmax, Loss function: SparseCategoricalCrossentropy
+Compiled odd and even classifiers
+Prepared TensorFlow datasets for training
+Saved loss and accuracy plots to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/loss_acc_train_val_mclass_dnn_odd.png
+Saved loss and accuracy plots to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/loss_acc_train_val_mclass_dnn_even.png
+Training completed for both odd and even classifiers
+Saved odd classifier model to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/odd_mclass_dnn.keras
+Saved even classifier model to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/even_mclass_dnn.keras
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root to pandas DataFrame with shape (306542, 92)
+Applying event filters on branches ['T_btgb1', 'T_btgb2', 'T_mqq', 'T_dETAqq'] with cuts [0.2605, 0.2605, 500, 3.5] , before cuts the shape is (306542, 92)
+After cuts the shape is (56625, 92)
+Resampled data to 300000 events with replacement=True
+Added label branch with value 0
+Available weight features : ['T_weight', 'T_PUweight', 'LUMI']
+Normalised weights with median scaling applied
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root with shape (300000, 30) , label 0
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root to pandas DataFrame with shape (70487, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2', 'T_mqq', 'T_dETAqq'] with cuts [0.2605, 0.2605, 500, 3.5] , before cuts the shape is (70487, 117)
+After cuts the shape is (44479, 117)
+Resampled data to 300000 events with replacement=True
+Added label branch with value 1
+Available weight features : ['T_weight', 'T_HLTweight', 'T_PUweight', 'T_btag_weight_central', 'T_online_btag_weight', 'LUMI']
+Normalised weights with median scaling applied
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root with shape (300000, 30) , label 1
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root to pandas DataFrame with shape (16781, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2', 'T_mqq', 'T_dETAqq'] with cuts [0.2605, 0.2605, 500, 3.5] , before cuts the shape is (16781, 117)
+After cuts the shape is (4808, 117)
+Resampled data to 300000 events with replacement=True
+Added label branch with value 2
+Available weight features : ['T_weight', 'T_HLTweight', 'T_PUweight', 'T_btag_weight_central', 'T_online_btag_weight', 'LUMI']
+Normalised weights with median scaling applied
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root with shape (300000, 30) , label 2
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root to pandas DataFrame with shape (993409, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2', 'T_mqq', 'T_dETAqq'] with cuts [0.2605, 0.2605, 500, 3.5] , before cuts the shape is (993409, 117)
+After cuts the shape is (138133, 117)
+Resampled data to 300000 events with replacement=True
+Added label branch with value 3
+Available weight features : ['T_weight', 'T_HLTweight', 'T_PUweight', 'T_btag_weight_central', 'T_online_btag_weight', 'LUMI']
+Normalised weights with median scaling applied
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root with shape (300000, 30) , label 3
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root to pandas DataFrame with shape (125501, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2', 'T_mqq', 'T_dETAqq'] with cuts [0.2605, 0.2605, 500, 3.5] , before cuts the shape is (125501, 117)
+After cuts the shape is (18959, 117)
+Resampled data to 300000 events with replacement=True
+Added label branch with value 4
+Available weight features : ['T_weight', 'T_HLTweight', 'T_PUweight', 'T_btag_weight_central', 'T_online_btag_weight', 'LUMI']
+Normalised weights with median scaling applied
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root with shape (300000, 30) , label 4
+Replaced NaN and Inf values with zero
+Processed data - Odd features shape: (751045, 26), Even features shape: (748955, 26)
+Input shape: 26, Number of classes: 5, Activation: softmax, Loss function: SparseCategoricalCrossentropy
+Compiled odd and even classifiers
+Prepared TensorFlow datasets for training
+Saved loss and accuracy plots to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/loss_acc_train_val_mclass_dnn_odd.png
+Saved loss and accuracy plots to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/loss_acc_train_val_mclass_dnn_even.png
+Training completed for both odd and even classifiers
+Saved odd classifier model to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/odd_mclass_dnn.keras
+Saved even classifier model to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/even_mclass_dnn.keras
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root to pandas DataFrame with shape (306542, 92)
+Applying event filters on branches ['T_btgb1', 'T_btgb2', 'T_mqq', 'T_dETAqq'] with cuts [0.2605, 0.2605, 500, 3.5] , before cuts the shape is (306542, 92)
+After cuts the shape is (56625, 92)
+Resampled data to 300000 events with replacement=True
+Added label branch with value 0
+Available weight features : ['T_weight', 'T_PUweight', 'LUMI']
+Normalised weights with median scaling applied
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root with shape (300000, 30) , label 0
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root to pandas DataFrame with shape (70487, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2', 'T_mqq', 'T_dETAqq'] with cuts [0.2605, 0.2605, 500, 3.5] , before cuts the shape is (70487, 117)
+After cuts the shape is (44479, 117)
+Resampled data to 300000 events with replacement=True
+Added label branch with value 1
+Available weight features : ['T_weight', 'T_HLTweight', 'T_PUweight', 'T_btag_weight_central', 'T_online_btag_weight', 'LUMI']
+Normalised weights with median scaling applied
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root with shape (300000, 30) , label 1
+Replaced NaN and Inf values with zero
+Processed data - Odd features shape: (302550, 26), Even features shape: (297450, 26)
+Input shape: 26, Number of classes: 1, Activation: sigmoid, Loss function: binary_crossentropy
+Compiled odd and even classifiers
+Prepared TensorFlow datasets for training
+Saved loss and accuracy plots to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/loss_acc_train_val_biclass_dnn_odd.png
+Saved loss and accuracy plots to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/loss_acc_train_val_biclass_dnn_even.png
+Training completed for both odd and even classifiers
+Saved odd classifier model to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/odd_biclass_dnn.keras
+Saved even classifier model to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/even_biclass_dnn.keras
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root to pandas DataFrame with shape (306542, 92)
+Applying event filters on branches ['T_btgb1', 'T_btgb2', 'T_mqq', 'T_dETAqq'] with cuts [0.2605, 0.2605, 500, 3.5] , before cuts the shape is (306542, 92)
+After cuts the shape is (56625, 92)
+Resampled data to 300000 events with replacement=True
+Added label branch with value 0
+Available weight features : ['T_weight', 'T_PUweight', 'LUMI']
+Normalised weights with median scaling applied
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root with shape (300000, 30) , label 0
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root to pandas DataFrame with shape (70487, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2', 'T_mqq', 'T_dETAqq'] with cuts [0.2605, 0.2605, 500, 3.5] , before cuts the shape is (70487, 117)
+After cuts the shape is (44479, 117)
+Resampled data to 300000 events with replacement=True
+Added label branch with value 1
+Available weight features : ['T_weight', 'T_HLTweight', 'T_PUweight', 'T_btag_weight_central', 'T_online_btag_weight', 'LUMI']
+Normalised weights with median scaling applied
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root with shape (300000, 30) , label 1
+Replaced NaN and Inf values with zero
+Processed data - Odd features shape: (302550, 26), Even features shape: (297450, 26)
+Input shape: 26, Number of classes: 1, Activation: sigmoid, Loss function: binary_crossentropy
+Compiled odd and even classifiers
+Prepared TensorFlow datasets for training
+Saved loss and accuracy plots to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/loss_acc_train_val_biclass_dnn_odd.png
+Saved loss and accuracy plots to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/loss_acc_train_val_biclass_dnn_even.png
+Training completed for both odd and even classifiers
+Saved odd classifier model to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/odd_biclass_dnn.keras
+Saved even classifier model to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/even_biclass_dnn.keras
+Input shape: 26, Number of classes: 5, Activation: softmax, Loss function: SparseCategoricalCrossentropy
+Processing files for predictions : ['/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_JECUp.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_JECDown.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_JERUp.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_JERDown.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_PNetJECUp.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_PNetJECDown.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_JECUp.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_JECDown.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_JERUp.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_JERDown.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_PNetJECUp.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_PNetJECDown.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_JECUp.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_JECDown.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_JERUp.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_JERDown.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_PNetJECUp.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_PNetJECDown.root']
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf.root to pandas DataFrame with shape (6130833, 92)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (6130833, 92)
+After cuts the shape is (2651109, 92)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf.root - Odd features shape: (1325832, 26), Even features shape: (1325277, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root to pandas DataFrame with shape (306542, 92)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (306542, 92)
+After cuts the shape is (132489, 92)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root - Odd features shape: (66295, 26), Even features shape: (66194, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root to pandas DataFrame with shape (70487, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (70487, 117)
+After cuts the shape is (59050, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root - Odd features shape: (29757, 26), Even features shape: (29293, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root to pandas DataFrame with shape (16781, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (16781, 117)
+After cuts the shape is (12027, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root - Odd features shape: (6045, 26), Even features shape: (5982, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root to pandas DataFrame with shape (993409, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (993409, 117)
+After cuts the shape is (459174, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root - Odd features shape: (229459, 26), Even features shape: (229715, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root to pandas DataFrame with shape (125501, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (125501, 117)
+After cuts the shape is (63357, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root - Odd features shape: (31462, 26), Even features shape: (31895, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root to pandas DataFrame with shape (1414020, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (1414020, 117)
+After cuts the shape is (615266, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root - Odd features shape: (308046, 26), Even features shape: (307220, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_JECUp.root to pandas DataFrame with shape (128768, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (128768, 117)
+After cuts the shape is (65089, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_JECUp.root - Odd features shape: (32327, 26), Even features shape: (32762, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_JECDown.root to pandas DataFrame with shape (121953, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (121953, 117)
+After cuts the shape is (61426, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_JECDown.root - Odd features shape: (30514, 26), Even features shape: (30912, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_JERUp.root to pandas DataFrame with shape (125398, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (125398, 117)
+After cuts the shape is (63268, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_JERUp.root - Odd features shape: (31424, 26), Even features shape: (31844, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_JERDown.root to pandas DataFrame with shape (125561, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (125561, 117)
+After cuts the shape is (63375, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_JERDown.root - Odd features shape: (31467, 26), Even features shape: (31908, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_PNetJECUp.root to pandas DataFrame with shape (125591, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (125591, 117)
+After cuts the shape is (63391, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_PNetJECUp.root - Odd features shape: (31467, 26), Even features shape: (31924, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_PNetJECDown.root to pandas DataFrame with shape (125579, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (125579, 117)
+After cuts the shape is (63388, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_PNetJECDown.root - Odd features shape: (31459, 26), Even features shape: (31929, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_JECUp.root to pandas DataFrame with shape (17554, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (17554, 117)
+After cuts the shape is (12601, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_JECUp.root - Odd features shape: (6334, 26), Even features shape: (6267, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_JECDown.root to pandas DataFrame with shape (15840, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (15840, 117)
+After cuts the shape is (11344, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_JECDown.root - Odd features shape: (5692, 26), Even features shape: (5652, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_JERUp.root to pandas DataFrame with shape (16715, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (16715, 117)
+After cuts the shape is (11987, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_JERUp.root - Odd features shape: (6034, 26), Even features shape: (5953, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_JERDown.root to pandas DataFrame with shape (16787, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (16787, 117)
+After cuts the shape is (12033, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_JERDown.root - Odd features shape: (6050, 26), Even features shape: (5983, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_PNetJECUp.root to pandas DataFrame with shape (16775, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (16775, 117)
+After cuts the shape is (12005, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_PNetJECUp.root - Odd features shape: (6020, 26), Even features shape: (5985, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_PNetJECDown.root to pandas DataFrame with shape (16781, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (16781, 117)
+After cuts the shape is (12020, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_PNetJECDown.root - Odd features shape: (6028, 26), Even features shape: (5992, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_JECUp.root to pandas DataFrame with shape (73701, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (73701, 117)
+After cuts the shape is (61597, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_JECUp.root - Odd features shape: (30986, 26), Even features shape: (30611, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_JECDown.root to pandas DataFrame with shape (66337, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (66337, 117)
+After cuts the shape is (55675, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_JECDown.root - Odd features shape: (28085, 26), Even features shape: (27590, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_JERUp.root to pandas DataFrame with shape (70228, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (70228, 117)
+After cuts the shape is (58827, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_JERUp.root - Odd features shape: (29655, 26), Even features shape: (29172, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_JERDown.root to pandas DataFrame with shape (70426, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (70426, 117)
+After cuts the shape is (59000, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_JERDown.root - Odd features shape: (29753, 26), Even features shape: (29247, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_PNetJECUp.root to pandas DataFrame with shape (70478, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (70478, 117)
+After cuts the shape is (59031, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_PNetJECUp.root - Odd features shape: (29748, 26), Even features shape: (29283, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_PNetJECDown.root to pandas DataFrame with shape (70438, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (70438, 117)
+After cuts the shape is (59000, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_PNetJECDown.root - Odd features shape: (29750, 26), Even features shape: (29250, 26)
+Loaded odd classifier model from /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/odd_mclass_dnn.keras
+Loaded even classifier model from /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/even_mclass_dnn.keras
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_JECUp.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_JECDown.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_JERUp.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_JERDown.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_PNetJECUp.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_PNetJECDown.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_JECUp.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_JECDown.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_JERUp.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_JERDown.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_PNetJECUp.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_PNetJECDown.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_JECUp.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_JECDown.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_JERUp.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_JERDown.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_PNetJECUp.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_PNetJECDown.root
+Input shape: 26, Number of classes: 1, Activation: sigmoid, Loss function: binary_crossentropy
+Processing files for predictions : ['/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_JECUp.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_JECDown.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_JERUp.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_JERDown.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_PNetJECUp.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_PNetJECDown.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_JECUp.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_JECDown.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_JERUp.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_JERDown.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_PNetJECUp.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_PNetJECDown.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_JECUp.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_JECDown.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_JERUp.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_JERDown.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_PNetJECUp.root', '/Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_PNetJECDown.root']
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf.root to pandas DataFrame with shape (2651109, 92)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (2651109, 92)
+After cuts the shape is (2651109, 92)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf.root - Odd features shape: (1325832, 26), Even features shape: (1325277, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root to pandas DataFrame with shape (132489, 92)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (132489, 92)
+After cuts the shape is (132489, 92)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root - Odd features shape: (66295, 26), Even features shape: (66194, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root to pandas DataFrame with shape (59050, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (59050, 117)
+After cuts the shape is (59050, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root - Odd features shape: (29757, 26), Even features shape: (29293, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root to pandas DataFrame with shape (12027, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (12027, 117)
+After cuts the shape is (12027, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root - Odd features shape: (6045, 26), Even features shape: (5982, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root to pandas DataFrame with shape (459174, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (459174, 117)
+After cuts the shape is (459174, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root - Odd features shape: (229459, 26), Even features shape: (229715, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root to pandas DataFrame with shape (63357, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (63357, 117)
+After cuts the shape is (63357, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root - Odd features shape: (31462, 26), Even features shape: (31895, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root to pandas DataFrame with shape (615266, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (615266, 117)
+After cuts the shape is (615266, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root - Odd features shape: (308046, 26), Even features shape: (307220, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_JECUp.root to pandas DataFrame with shape (65089, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (65089, 117)
+After cuts the shape is (65089, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_JECUp.root - Odd features shape: (32327, 26), Even features shape: (32762, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_JECDown.root to pandas DataFrame with shape (61426, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (61426, 117)
+After cuts the shape is (61426, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_JECDown.root - Odd features shape: (30514, 26), Even features shape: (30912, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_JERUp.root to pandas DataFrame with shape (63268, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (63268, 117)
+After cuts the shape is (63268, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_JERUp.root - Odd features shape: (31424, 26), Even features shape: (31844, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_JERDown.root to pandas DataFrame with shape (63375, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (63375, 117)
+After cuts the shape is (63375, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_JERDown.root - Odd features shape: (31467, 26), Even features shape: (31908, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_PNetJECUp.root to pandas DataFrame with shape (63391, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (63391, 117)
+After cuts the shape is (63391, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_PNetJECUp.root - Odd features shape: (31467, 26), Even features shape: (31924, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_PNetJECDown.root to pandas DataFrame with shape (63388, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (63388, 117)
+After cuts the shape is (63388, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_PNetJECDown.root - Odd features shape: (31459, 26), Even features shape: (31929, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_JECUp.root to pandas DataFrame with shape (12601, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (12601, 117)
+After cuts the shape is (12601, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_JECUp.root - Odd features shape: (6334, 26), Even features shape: (6267, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_JECDown.root to pandas DataFrame with shape (11344, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (11344, 117)
+After cuts the shape is (11344, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_JECDown.root - Odd features shape: (5692, 26), Even features shape: (5652, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_JERUp.root to pandas DataFrame with shape (11987, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (11987, 117)
+After cuts the shape is (11987, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_JERUp.root - Odd features shape: (6034, 26), Even features shape: (5953, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_JERDown.root to pandas DataFrame with shape (12033, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (12033, 117)
+After cuts the shape is (12033, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_JERDown.root - Odd features shape: (6050, 26), Even features shape: (5983, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_PNetJECUp.root to pandas DataFrame with shape (12005, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (12005, 117)
+After cuts the shape is (12005, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_PNetJECUp.root - Odd features shape: (6020, 26), Even features shape: (5985, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_PNetJECDown.root to pandas DataFrame with shape (12020, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (12020, 117)
+After cuts the shape is (12020, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_PNetJECDown.root - Odd features shape: (6028, 26), Even features shape: (5992, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_JECUp.root to pandas DataFrame with shape (61597, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (61597, 117)
+After cuts the shape is (61597, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_JECUp.root - Odd features shape: (30986, 26), Even features shape: (30611, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_JECDown.root to pandas DataFrame with shape (55675, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (55675, 117)
+After cuts the shape is (55675, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_JECDown.root - Odd features shape: (28085, 26), Even features shape: (27590, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_JERUp.root to pandas DataFrame with shape (58827, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (58827, 117)
+After cuts the shape is (58827, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_JERUp.root - Odd features shape: (29655, 26), Even features shape: (29172, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_JERDown.root to pandas DataFrame with shape (59000, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (59000, 117)
+After cuts the shape is (59000, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_JERDown.root - Odd features shape: (29753, 26), Even features shape: (29247, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_PNetJECUp.root to pandas DataFrame with shape (59031, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (59031, 117)
+After cuts the shape is (59031, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_PNetJECUp.root - Odd features shape: (29748, 26), Even features shape: (29283, 26)
+Converted /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_PNetJECDown.root to pandas DataFrame with shape (59000, 117)
+Applying event filters on branches ['T_btgb1', 'T_btgb2'] with cuts [0.2605, 0.2605] , before cuts the shape is (59000, 117)
+After cuts the shape is (59000, 117)
+Replaced NaN and Inf values with zero
+Replaced NaN and Inf values with zero
+Processed file /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_PNetJECDown.root - Odd features shape: (29750, 26), Even features shape: (29250, 26)
+Loaded odd classifier model from /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/odd_biclass_dnn.keras
+Loaded even classifier model from /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/even_biclass_dnn.keras
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_JetMET_2022_btgsf_5perc.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_TTto4Q_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_JECUp.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_JECDown.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_JERUp.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_JERDown.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_PNetJECUp.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_Zto2Q-4Jets_2022_btgsf_PNetJECDown.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_JECUp.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_JECDown.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_JERUp.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_JERDown.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_PNetJECUp.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_GluGluHto2B_M-125_TuneCP5_13p6TeV_powheg-minlo-pythia8_2022_btgsf_PNetJECDown.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_JECUp.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_JECDown.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_JERUp.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_JERDown.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_PNetJECUp.root
+Saved predictions to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/2022_pre_EE_Ntuples/DNN_Ntuples_Train/tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf_PNetJECDown.root
+Processed file tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label 1
+Processed file tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_BiClass'] with label 0
+Saved ROC curve plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_BiClass_even_odd_roc_curve.png
+Processed file tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label 1
+Processed file tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD'] with label 0
+Saved ROC curve plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_even_odd_roc_curve.png
+Processed file tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label 1
+Processed file tree_QCD-4Jets_HT_TuneCP5_13p6TeV_madgraphMLM-pythia8_2022_btgsf.root for branches ['DNN_VBF', 'DNN_QCD', 'DNN_TT'] with label 0
+Saved ROC curve plot to /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/DNN_VBF_DNN_QCD_DNN_TT_even_odd_roc_curve.png

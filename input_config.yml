@@ -1,4 +1,4 @@
-learning_rate : 0.001
+learning_rate : 0.0001
 batch_size : 512
 num_epochs : 50
 nsamples : 300000
@@ -199,7 +199,7 @@ prediction_cuts :
   - 0.2605
   - 0.2605
 
-self.config["event_branches"] , self.config["cuts"]
+
 
 output_log :
   folder_path : /Users/sandeeppradhan/Desktop/VBF_Analysis_Folder/DNN_RESULTS/MClass_DNN_VBF/output_plot_models/
