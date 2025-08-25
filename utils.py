@@ -688,5 +688,18 @@ class DNNModel():
                 print("✅ No significant overfitting based on accuracy.")
 
 
+class BasicMethods():
+    
+    def __init__(self, ):
+        pass
 
+    def read_config_file(self, file_name ) -> Dict[str, any]:
+        with open(file_name, 'r') as file:
+            config = yaml.safe_load(file)
+        return config.copy()
+    
+    def create_log_folder(self, log_path: str) -> None:
+        with open(log_path, 'w') as f:
+            f.write("Log file created.\n")
+        return True
 
