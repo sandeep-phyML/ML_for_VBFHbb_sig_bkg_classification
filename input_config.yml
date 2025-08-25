@@ -175,12 +175,24 @@ mbb_distribution_files_dnn_cuts:
       legend : DNN Cut > 0.95
 
 # event cut 
-event_branches : 
+train_event_cut_branches : 
   - T_btgb1
   - T_btgb2
-cuts : 
+  - T_mqq
+  - T_dETAqq
+train_cuts : 
   - 0.2605
   - 0.2605
+  - 500
+  - 3.5
+
+prediction_event_cut_branches : 
+  - T_btgb1
+  - T_btgb2
+prediction_cuts : 
+  - 0.2605
+  - 0.2605
+
 self.config["event_branches"] , self.config["cuts"]
 
 output_log :

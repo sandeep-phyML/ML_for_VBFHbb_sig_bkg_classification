@@ -23,7 +23,6 @@ import array
 from tensorflow.keras.layers import Layer
 import yaml
 def save_output(out_data , ofile_path: str = "model_summary.txt"):
-    # print(out_data)
     with open(ofile_path, "a") as f:
         f.write(out_data + "\n")
 
@@ -48,93 +47,58 @@ class PrepareDataset():
             self.train_folder_path = self.config["train_mclass_files_labels"]["folder_path"]
             self.file_label_list = self.config["train_mclass_files_labels"]["file_names_labels"]
         self.pred_paths = [os.path.join(self.config["prediction_files"]["folder_path"], file_name) for file_name in self.config["prediction_files"]["file_names"]]
-    def convert_tree_to_pd(self, input_file: str) -> pd.DataFrame:
-        file_data = uproot.open(f"{input_file}:{self.tree_name}")
-        pd_data = file_data.arrays(file_data.keys(), library="pd")
-        save_output(f"Converted {input_file} to pandas DataFrame with shape {pd_data.shape}",ofile_path = self.output_file_path)
-        return pd_data
-    
-    def resample_events(self, pd_data: pd.DataFrame) -> pd.DataFrame:
-        replace = self.nsample > len(pd_data)
-        resampled_data = pd_data.sample(n=self.nsample, replace=replace, random_state=42).reset_index(drop=True)
-        save_output(f"Resampled data to {self.nsample} events with replacement={replace}",ofile_path = self.output_file_path)
-        return resampled_data
-    def add_label_branch(self, pd_data: pd.DataFrame, label: int) -> pd.DataFrame:
-        pd_data[self.label_branch_name] = np.full(len(pd_data), label)
-        save_output(f"Added label branch with value {label}",ofile_path = self.output_file_path)
-        return pd_data
-
-    def get_weight_branch_(self, pd_data: pd.DataFrame) -> Tuple[pd.DataFrame, str]:
-        new_pd_data = pd_data.copy()
-        new_pd_data[self.total_weight_branch] = np.ones(len(new_pd_data))
-        avail_weight_branches = [branch for branch in self.weight_features if branch in pd_data.columns ]
-        save_output(f"Available weight features : {avail_weight_branches}",ofile_path = self.output_file_path)
-        for branch in avail_weight_branches:
-            if branch in new_pd_data.columns:
-                new_pd_data[self.total_weight_branch] *= new_pd_data[branch]
-            else:
-                raise KeyError(f"Column '{branch}' not found in DataFrame.")
-        return new_pd_data 
-        
-    def normalise_the_weight(self, pd_data: pd.DataFrame) -> Tuple[pd.DataFrame, str]:
-        scale_weight = 1.0 /( pd_data[self.total_weight_branch].sum())
-        median_weights_ = 1.0/np.median(pd_data[self.total_weight_branch]*scale_weight)
-        pd_data[self.norm_branch] = pd_data[self.total_weight_branch] * scale_weight * median_weights_
-        save_output(f"Normalised weights with median scaling applied",ofile_path = self.output_file_path)
-        return pd_data 
-        
-    def replace_nan_inf_with_zero(self, pd_data: pd.DataFrame) -> pd.DataFrame:
-        pd_data = pd_data.replace([np.nan, np.inf, -np.inf], 0)
-        save_output("Replaced NaN and Inf values with zero",ofile_path = self.output_file_path)
-        return pd_data
-        
-    def get_np_feaweilabel_odd_even_train(self) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
+    def create_five_perc_data(self,infile_path):
+        pd_data = self.convert_tree_to_pd(infile_path)
+        selected_data = pd_data.sample(frac=0.05, random_state=42)
+        with uproot.recreate(infile_path.replace(".root","_5perc.root")) as f:
+            f["tree"] = selected_data
+        save_output(f"Created 5% sample data from {infile_path} , selected event {len(selected_data)} from {len(pd_data)} ", ofile_path=self.output_file_path)
+        return True
+    def prepare_even_odd_datasets_train(self) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
         all_data = []
         for item in self.file_label_list:
             file_path = os.path.join(self.train_folder_path, item["file_name"])
             label_value = item["label"]
             pd_data_ = self.convert_tree_to_pd(file_path)
-            pd_data_ = self.add_event_filter(pd_data_, self.config["event_branches"] , self.config["cuts"])
+            pd_data_ = self.add_event_filter(pd_data_, self.config["train_event_cut_branches"] , self.config["train_cuts"])
             if self.is_resample_all:
                 pd_data_ = self.resample_events(pd_data_)
             pd_data_ = self.add_label_branch(pd_data_, label = label_value)
-            pd_data_= self.get_weight_branch_(pd_data_)
+            pd_data_ = self.get_weight_branch_(pd_data_)
             pd_data_ = self.normalise_the_weight(pd_data_ )
-            pd_data_ = pd_data_[self.train_feature + [self.event_branch,self.norm_branch, self.label_branch_name] +[ "T_reg_mbb"]]
+            pd_data_ = pd_data_[self.train_feature + [self.event_branch,self.norm_branch, self.label_branch_name] +[ "T_reg_mbb"]]  # sole purpose of mbb variable is to train the adversarial model,
             all_data.append(pd_data_)
+            save_output(f"Processed file {file_path} with shape {pd_data_.shape} , label {label_value}", ofile_path=self.output_file_path)
+
         combined_data = pd.concat(all_data, ignore_index=True)
         combined_data = self.replace_nan_inf_with_zero(combined_data)
         combined_data = combined_data.sample(frac=1.0, random_state=42).reset_index(drop=True)
-        feature_odd = combined_data[combined_data[self.event_branch] % 2 == 1].reset_index(drop=True).filter(self.train_feature).to_numpy()
-        feature_even = combined_data[combined_data[self.event_branch] % 2 == 0].reset_index(drop=True).filter(self.train_feature).to_numpy()
-        weight_odd = combined_data[combined_data[self.event_branch] % 2 == 1].reset_index(drop=True)[self.norm_branch].to_numpy()
-        weight_even = combined_data[combined_data[self.event_branch] % 2 == 0].reset_index(drop=True)[self.norm_branch].to_numpy()
-        label_odd = combined_data[combined_data[self.event_branch] % 2 == 1].reset_index(drop=True)[self.label_branch_name].to_numpy()
-        label_even = combined_data[combined_data[self.event_branch] % 2 == 0].reset_index(drop=True)[self.label_branch_name].to_numpy()
-        mass_all = combined_data["T_reg_mbb"].to_numpy()
-     
-        min_mass = mass_all.min()
-        max_mass = mass_all.max()
-        if self.normalise_mass:
-            save_output(f"Normalising mass with min: {min_mass}, max: {max_mass}", ofile_path=self.output_file_path)
-            mass_odd = ((combined_data[combined_data[self.event_branch] % 2 == 1]
-                        .reset_index(drop=True)["T_reg_mbb"].to_numpy()) - min_mass) / (max_mass - min_mass)
-            
-            mass_even = ((combined_data[combined_data[self.event_branch] % 2 == 0]
-                        .reset_index(drop=True)["T_reg_mbb"].to_numpy()) - min_mass) / (max_mass - min_mass)
-        else:
-            save_output(f"Not normalising mass, using raw values", ofile_path=self.output_file_path)
-            mass_odd = combined_data[combined_data[self.event_branch] % 2 == 1].reset_index(drop=True)["T_reg_mbb"].to_numpy()
-            mass_even = combined_data[combined_data[self.event_branch] % 2 == 0].reset_index(drop=True)["T_reg_mbb"].to_numpy()
+
+        odd_data = combined_data[combined_data[self.event_branch] % 2 == 1].reset_index(drop=True)
+        even_data = combined_data[combined_data[self.event_branch] % 2 == 0].reset_index(drop=True)
+
+        feature_odd = odd_data.filter(self.train_feature).to_numpy()
+        feature_even = even_data.filter(self.train_feature).to_numpy()
+
+        weight_odd = odd_data[self.norm_branch].to_numpy()
+        weight_even = even_data[self.norm_branch].to_numpy()
+
+        label_odd = odd_data[self.label_branch_name].to_numpy()
+        label_even = even_data[self.label_branch_name].to_numpy()
+
+        mass_odd = odd_data["T_reg_mbb"].to_numpy()
+        mass_even = even_data["T_reg_mbb"].to_numpy()
+
         save_output(f"Processed data - Odd features shape: {feature_odd.shape}, Even features shape: {feature_even.shape}", ofile_path=self.output_file_path)
         return feature_odd, feature_even , weight_odd , weight_even , label_odd , label_even , mass_odd , mass_even
             
-    def prepare_pred_data(self) -> Dict[str, Dict[str, Dict[str, np.ndarray]]]:
+    def prepare_even_odd_datasets_prediction(self) -> Dict[str, Dict[str, Dict[str, np.ndarray]]]:
         all_data = {}
         save_output(f"Processing files for predictions : {self.pred_paths}", ofile_path=self.output_file_path)
         for file in self.pred_paths:
             all_data[file] = {"odd_data": {}, "even_data": {}}
             pd_data_ = self.convert_tree_to_pd(file)
+            pd_data_ = self.add_event_filter(pd_data_, self.config["prediction_event_cut_branches"] , self.config["prediction_cuts"])
             print(f"Processing file: {file} with shape {pd_data_.shape}")
             odd_data_ = pd_data_[pd_data_[self.event_branch] % 2 == 1].reset_index(drop=True)
             even_data_ = pd_data_[pd_data_[self.event_branch] % 2 == 0].reset_index(drop=True)
@@ -145,13 +109,41 @@ class PrepareDataset():
             save_output(f"Processed file {file} - Odd features shape: {all_data[file]['odd_data']['features'].shape}, Even features shape: {all_data[file]['even_data']['features'].shape}", ofile_path=self.output_file_path)
             print(f"Processed file {file} - Odd features shape: {all_data[file]['odd_data']['features'].shape}, Even features shape: {all_data[file]['even_data']['features'].shape}")
         return all_data
-    def create_five_perc_data(self,infile_path):
-        pd_data = self.convert_tree_to_pd(infile_path)
-        selected_data = pd_data.sample(frac=0.05, random_state=42)
-        with uproot.recreate(infile_path.replace(".root","_5perc.root")) as f:
-            f["tree"] = selected_data
-        save_output(f"Created 5% sample data from {infile_path} , selected event {len(selected_data)} from {len(pd_data)} ", ofile_path=self.output_file_path)
-        return True 
+    def convert_tree_to_pd(self, input_file: str) -> pd.DataFrame:
+        file_data = uproot.open(f"{input_file}:{self.tree_name}")
+        pd_data = file_data.arrays(file_data.keys(), library="pd")
+        save_output(f"Converted {input_file} to pandas DataFrame with shape {pd_data.shape}",ofile_path = self.output_file_path)
+        return pd_data
+    def resample_events(self, pd_data: pd.DataFrame) -> pd.DataFrame:
+        replace = self.nsample > len(pd_data)
+        resampled_data = pd_data.sample(n=self.nsample, replace=replace, random_state=42).reset_index(drop=True)
+        save_output(f"Resampled data to {self.nsample} events with replacement={replace}",ofile_path = self.output_file_path)
+        return resampled_data
+    def add_label_branch(self, pd_data: pd.DataFrame, label: int) -> pd.DataFrame:
+        pd_data[self.label_branch_name] = np.full(len(pd_data), label)
+        save_output(f"Added label branch with value {label}",ofile_path = self.output_file_path)
+        return pd_data
+    def get_weight_branch_(self, pd_data: pd.DataFrame) -> Tuple[pd.DataFrame, str]:
+        new_pd_data = pd_data.copy()
+        new_pd_data[self.total_weight_branch] = np.ones(len(new_pd_data))
+        avail_weight_branches = [branch for branch in self.weight_features if branch in pd_data.columns ]
+        save_output(f"Available weight features : {avail_weight_branches}",ofile_path = self.output_file_path)
+        for branch in avail_weight_branches:
+            if branch in new_pd_data.columns:
+                new_pd_data[self.total_weight_branch] *= new_pd_data[branch]
+            else:
+                raise KeyError(f"Column '{branch}' not found in DataFrame.")
+        return new_pd_data   
+    def normalise_the_weight(self, pd_data: pd.DataFrame) -> Tuple[pd.DataFrame, str]:
+        scale_weight = 1.0 /( pd_data[self.total_weight_branch].sum())
+        median_weights_ = 1.0/np.median(pd_data[self.total_weight_branch]*scale_weight)
+        pd_data[self.norm_branch] = pd_data[self.total_weight_branch] * scale_weight * median_weights_
+        save_output(f"Normalised weights with median scaling applied",ofile_path = self.output_file_path)
+        return pd_data       
+    def replace_nan_inf_with_zero(self, pd_data: pd.DataFrame) -> pd.DataFrame:
+        pd_data = pd_data.replace([np.nan, np.inf, -np.inf], 0)
+        save_output("Replaced NaN and Inf values with zero",ofile_path = self.output_file_path)
+        return pd_data
     def prepare_data_for_bdt_training(self, input_file: str, output_file: str,nsample:int,filter_branches,cuts ,weight_branch:str = "train_weight"  ) -> bool:
         print(f"Preparing data for BDT training from {input_file} to {output_file} with nsample {nsample}, filter branches {filter_branches}, cuts {cuts}, weight branch {weight_branch}")
         self.norm_branch = weight_branch
@@ -165,7 +157,7 @@ class PrepareDataset():
         print(f"Saving processed data for bdt training  to {output_file} with shape {pd_data_.shape}")
         with uproot.recreate(output_file) as f:
             f["tree"] = pd_data_
-            return True
+            return True  # only required for the bdt training
     def filter_nan_with_zero_event_sel(self, input_file: str ,filter_branches,cuts) -> bool:
         print(f"Filtering NaN and Inf values in {input_file} with branches {filter_branches} and cuts {cuts}")
         pd_data_ = self.convert_tree_to_pd(input_file)
@@ -175,11 +167,12 @@ class PrepareDataset():
             f["tree"] = pd_data_
             return True
     def add_event_filter(self,data: pd.DataFrame, event_branches , cuts) -> pd.DataFrame:
-        # here cuts are applied and ,
+        save_output(f"Applying event filters on branches {event_branches} with cuts {cuts} , before cuts the shape is {data.shape}", ofile_path=self.output_file_path)
         for index , branch in enumerate(event_branches):
             print(f"Applying cut on branch {branch} with value {cuts[index]}")
             data = data[data[branch]>=cuts[index]]
             print(f"Data shape after cut on {branch}: {data.shape}")
+        save_output(f"After cuts the shape is {data.shape}", ofile_path=self.output_file_path)
         return data
     
 
