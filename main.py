@@ -13,6 +13,9 @@ parser.add_argument('--results', action='store_true', help="Show/save results")
 parser.add_argument('--process_data', action='store_true', help="prepare data for training and prediction bdt etc ")
 parser.add_argument('--nresample', type=int,default=100000, help="Number of resamples to perform (default: 100000)")
 parser.add_argument('--prepare_5perc', action='store_true', help="prepare 5% of the data for training ")
+parser.add_argument('--plot_var_distribution', action='store_true', help="is plot the variable distributions ? ")
+parser.add_argument('--plot_roc', action='store_true', help="is plot the roc curve ? ")
+parser.add_argument('--plot_tprofile', action='store_true', help="is plot the tProfile ? ")
 args = parser.parse_args()
 
 # read the config file
@@ -21,12 +24,12 @@ config_file_name = "input_config.yml"
 config = basic_tool.read_config_file(config_file_name)
 log_path = os.path.join(config['output_log']['folder_path'],config['output_log']['file_name'])
 # basic_tool.create_log_folder(log_path)
-if args.prepare_5perc:
+if args.prepare_5perc: # prepare 5% of the data for training if have not prepared it yet
     dataset_ = PrepareDataset(  config = config ,output_log_path = log_path , is_biclass = args.biclass)
     dataset_.create_five_perc_data( config["full_data_path"] )
 
-if args.process_data:
-    dataset_ = PrepareDataset(  config = config ,output_log_path = log_path , is_biclass = args.biclass)
+if args.process_data:  # only for external perposes like , training a BDT , for DNN no need to use this feature 
+    dataset_ = PrepareDataset( config = config ,output_log_path = log_path , is_biclass = args.biclass)
     for file in config["prediction_files"]["file_names"]: # clean the data , replace nan with zero and apply medium btag 
         file_path = os.path.join(config["prediction_files"]["folder_path"], file)
         dataset_.filter_nan_with_zero_event_sel( file_path ,["T_btgb1","T_btgb2"],[0.260,0.260])
@@ -39,7 +42,7 @@ if args.process_data:
 if args.train :
     print("Preparing dataset for training ")
     dataset_ = PrepareDataset(  config = config ,output_log_path = log_path , is_biclass = args.biclass)
-    train_odd, train_even , weight_odd , weight_even , label_odd , label_even , mass_odd , mass_even = dataset_.get_np_feaweilabel_odd_even_train()
+    train_odd, train_even , weight_odd , weight_even , label_odd , label_even , mass_odd , mass_even = dataset_.prepare_even_odd_datasets_train()
     print(train_odd.shape, label_odd.shape, weight_odd.shape)
     print(train_even.shape, label_even.shape, weight_even.shape)
 
@@ -59,12 +62,12 @@ if args.train :
 if args.predict:
     dataset_ = PrepareDataset(  config = config ,output_log_path = log_path , is_biclass = args.biclass)
     model_ = DNNModel(config,log_path, is_biclass=args.biclass, is_bdt=args.bdt)
-    model_.pred_data_dict = dataset_.prepare_pred_data() # read all the files , from config and prepare even odd dataset , clean nan with zero etc 
+    model_.pred_data_dict = dataset_.prepare_even_odd_datasets_prediction() # read all the files , from config and prepare even odd dataset , clean nan with zero etc 
     model_.predict_dnn_score()
 
 # show results and save plots
-if args.results:
-    plot_ = Plot(config, log_path)
+plot_ = Plot(config, log_path)
+if args.plot_var_distribution:
     plot_.plot_var_distribution(["DNN_BiClass"])
     plot_.plot_var_distribution(["BiClassANN"])
     plot_.plot_var_distribution(["DNN_VBF","DNN_QCD"])
@@ -77,10 +80,12 @@ if args.results:
     plot_.plot_var_distribution(["DNN_Z2Q","DNN_VBF"])
     # plot_.plot_var_distribution(["DNN_Z2Q","DNN_QCD","DNN_TT"])
     # plot_.plot_var_distribution(["DNN_GGH","DNN_QCD","DNN_TT"])
+if args.roc:
     plot_.plot_roc_curve(["DNN_BiClass"])
-    plot_.plot_roc_curve(["BiClassANN"])
+    #plot_.plot_roc_curve(["BiClassANN"])
     plot_.plot_roc_curve(["DNN_VBF","DNN_QCD"])
     plot_.plot_roc_curve(["DNN_VBF","DNN_QCD","DNN_TT"])
+if args.plot_tprofile:
     file_path = os.path.join(config["prediction_files"]["folder_path"], "tree_VBFHto2B_M-125_dipoleRecoilOn_TuneCP5_13p6TeV_powheg-pythia8_2022_btgsf.root")
     plot_.plot_tprofile(file_path ,"output_plot_models/tprofile_biclass_vbf.png", is_mclass = False ,is_data = False,nbins = 50,mbb_range=(110.0, 140.0),vbfbclass="DNN_BiClass",vbf_dnn = "DNN_VBF",qcd_dnn = "DNN_QCD")
     plot_.plot_tprofile(file_path ,"output_plot_models/tprofile_mclass_vbf.png", is_mclass = True ,is_data = False,nbins = 50,mbb_range=(110.0, 140.0),vbfbclass="DNN_BiClass",vbf_dnn = "DNN_VBF",qcd_dnn = "DNN_QCD")
@@ -89,3 +94,7 @@ if args.results:
     plot_.plot_tprofile(file_path ,"output_plot_models/tprofile_biclass_data.png", is_mclass = False ,is_data = True,nbins = 50,mbb_range=(110.0, 140.0),vbfbclass="DNN_BiClass",vbf_dnn = "DNN_VBF",qcd_dnn = "DNN_QCD")
     plot_.plot_tprofile(file_path ,"output_plot_models/tprofile_mclass_data.png", is_mclass = True ,is_data = True,nbins = 50,mbb_range=(110.0, 140.0),vbfbclass="DNN_BiClass",vbf_dnn = "DNN_VBF",qcd_dnn = "DNN_QCD")
     plot_.plot_tprofile(file_path ,"output_plot_models/tprofile_biclass_vbf_qcd.png", is_mclass = False ,is_data = True,nbins = 50,mbb_range=(110.0, 140.0),vbfbclass="BiClassANN",vbf_dnn = "DNN_VBF",qcd_dnn = "DNN_QCD")
+
+
+
+
