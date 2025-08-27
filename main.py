@@ -80,7 +80,7 @@ if args.plot_var_distribution:
     plot_.plot_var_distribution(["DNN_Z2Q","DNN_VBF"])
     # plot_.plot_var_distribution(["DNN_Z2Q","DNN_QCD","DNN_TT"])
     # plot_.plot_var_distribution(["DNN_GGH","DNN_QCD","DNN_TT"])
-if args.roc:
+if args.plot_roc:
     plot_.plot_roc_curve(["DNN_BiClass"])
     #plot_.plot_roc_curve(["BiClassANN"])
     plot_.plot_roc_curve(["DNN_VBF","DNN_QCD"])
@@ -94,6 +94,9 @@ if args.plot_tprofile:
     plot_.plot_tprofile(file_path ,"output_plot_models/tprofile_biclass_data.png", is_mclass = False ,is_data = True,nbins = 50,mbb_range=(110.0, 140.0),vbfbclass="DNN_BiClass",vbf_dnn = "DNN_VBF",qcd_dnn = "DNN_QCD")
     plot_.plot_tprofile(file_path ,"output_plot_models/tprofile_mclass_data.png", is_mclass = True ,is_data = True,nbins = 50,mbb_range=(110.0, 140.0),vbfbclass="DNN_BiClass",vbf_dnn = "DNN_VBF",qcd_dnn = "DNN_QCD")
     plot_.plot_tprofile(file_path ,"output_plot_models/tprofile_biclass_vbf_qcd.png", is_mclass = False ,is_data = True,nbins = 50,mbb_range=(110.0, 140.0),vbfbclass="BiClassANN",vbf_dnn = "DNN_VBF",qcd_dnn = "DNN_QCD")
+
+
+
 
 
 
